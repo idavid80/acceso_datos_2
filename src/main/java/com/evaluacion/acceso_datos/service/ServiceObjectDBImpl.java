@@ -1,118 +1,97 @@
 package com.evaluacion.acceso_datos.service;
-/*
+
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.cesur.ficheros.servicios.Fichero;
 import com.evaluacion.acceso_datos.entities.Alumno;
-import com.evaluacion.acceso_datos.entities.FichaPregunta;
-import com.evaluacion.acceso_datos.entities.FichaRespuesta;
-import com.evaluacion.acceso_datos.entities.Pregunta;
-import com.evaluacion.acceso_datos.entities.Respuesta;
-import com.evaluacion.acceso_datos.repository.ApiRepository;
+import com.evaluacion.acceso_datos.entities.Asignatura;
+import com.evaluacion.acceso_datos.entities.Curso;
 import com.evaluacion.acceso_datos.repository.RepositoryObjectDB;
 
 @Service
 public class ServiceObjectDBImpl implements ServiceObjectDB {
 
 	@Autowired
-	protected ApiRepository api;
-
-	@Autowired
 	protected RepositoryObjectDB repo;
 
-	public Alumno crearAlumno(String nombre, String curso) {
-		Alumno alumno = new Alumno(nombre, curso);
-		return alumno;
+	public Asignatura crearAsignatura(String asignatura, String curso) {
+		return repo.crearAsignatura(asignatura, curso);
 	}
 
-	public List<FichaPregunta> obtenerTest() {
-		List<FichaPregunta> listaPreguntas = new ArrayList<>();
+	public List<Asignatura> mostrarAsignatura() {
+		return repo.mostrarAsignatura();
+	}
 
-		Pregunta[] test = api.obtenerJSON();
-		//Mapper mapeoDatos = new Mapper();
-		List<FichaRespuesta> listaRespuesta = new ArrayList<>();
-		for (Pregunta pregunta : test) {
-			FichaPregunta fichaPregunta = new FichaPregunta();
-			
-			fichaPregunta.setTexto(pregunta.getTexto().replace("ￃﾭ", "í").replace("ￃﾩ", "é").replace("ￂ﾿", "¿")
-					.replace("ￃﾳ", "ó").replace("ￃﾡ", "á").replace("ￃﾺ", "ú").replace("ￃﾱ", "ñ").replace("￢ﾀﾓ", "–"));
-			fichaPregunta.setEsSeleccion(pregunta.isEsSeleccion());
-			listaPreguntas.add(fichaPregunta);
-			//fichaPregunta = mapeoDatos.preguntaToFichaPregunta(pregunta);
-
-			for (Respuesta respuesta : pregunta.getListaRespuesta()) {
-				FichaRespuesta fichaRespuesta = new FichaRespuesta();
-				fichaRespuesta.setEsCorrecta(respuesta.isEsCorrecta());
-				*/
-	/*			fichaRespuesta.setRespuesta(respuesta.getRespuesta().replace("ￃﾭ", "í").replace("ￃﾩ", "é").replace("ￂ﾿", "¿")
-						.replace("ￃﾳ", "ó").replace("ￃﾡ", "á").replace("ￃﾺ", "ú").replace("ￃﾱ", "ñ").replace("￢ﾀﾓ", "–")););*/
-				//fichaRespuesta = mapeoDatos.respuestaToFichaRespuesta(respuesta);
-	//			listaRespuesta.add(fichaRespuesta);
-
-			//	repo.crearRespuesta(fichaRespuesta);
-		/*	}
-			fichaPregunta.setListaRespuesta(listaRespuesta);
-
-			listaPreguntas.add(fichaPregunta);
-
+	public List<Map<String, String>> hashMapCurso() {
+		// Set para almacenar elementos únicos
+		// HashMap<String, List<Asignatura>> hashAsignatura = new HashMap<>();
+		List<Asignatura> listaAsignatura = repo.mostrarAsignatura();
+		List<Map<String, String>> hashAsignatura = new ArrayList<>();
+		for (Asignatura asignatura : listaAsignatura) {
+			hashAsignatura.add(Map.of("asignatura", asignatura.getAsignatura(), "curso", asignatura.getCurso()));
 		}
-
-		return listaPreguntas;
+		return hashAsignatura;
 	}
 
-
-	/*
-	 * public String crearPersona() {
-	 * 
-	 * Pregunta[] listaPreguntas = api.obtenerJSON();
-	 * 
-	 * for(Pregunta pregunta: listaPreguntas) {
-	 * System.out.println(pregunta.getTexto());
-	 * 
-	 * }
-	 * 
-	 * 
-	 * return "OK"; }
-	 */
-/*
-	public Pregunta[] obtenerJSON() {
-		Pregunta[] listaPreguntas = api.obtenerJSON();
-		String prueba = "ￂ﾿Quￃﾩ tipo de trama de administraciￃﾳn puede emitir regularmente un AP?";
-	//	Mapper mapeoDatos = new Mapper();
-		FichaPregunta fichaPregunta = new FichaPregunta();
-		FichaRespuesta fichaRespuesta = new FichaRespuesta();
-		List<FichaPregunta> lista = new ArrayList<>();
-
-		for (Pregunta pregunta : listaPreguntas) {
-			fichaPregunta = new FichaPregunta();
-			fichaPregunta.setTexto(pregunta.getTexto().replace("ￃﾭ", "í").replace("ￃﾩ", "é").replace("ￂ﾿", "¿")
-					.replace("ￃﾳ", "ó").replace("ￃﾡ", "á").replace("ￃﾺ", "ú").replace("ￃﾱ", "ñ").replace("￢ﾀﾓ", "–"));
-			pregunta.setTexto(pregunta.getTexto().replace("ￃﾭ", "í").replace("ￃﾩ", "é").replace("ￂ﾿", "¿")
-					.replace("ￃﾳ", "ó").replace("ￃﾡ", "á").replace("ￃﾺ", "ú").replace("ￃﾱ", "ñ").replace("￢ﾀﾓ", "–"));
-			// fichaPregunta = mapeoDatos.preguntaToFichaPregunta(pregunta);
-			for (Respuesta respuesta : pregunta.getListaRespuesta()) {
-				fichaRespuesta.setRespuesta(
-						respuesta.getTexto().replace("ￃﾭ", "í").replace("ￃﾩ", "é").replace("ￂ﾿", "¿").replace("ￃﾳ", "ó")
-								.replace("ￃﾡ", "á").replace("ￃﾺ", "ú").replace("ￃﾱ", "ñ").replace("￢ﾀﾓ", "–"));
-				respuesta.setTexto(
-						respuesta.getTexto().replace("ￃﾭ", "í").replace("ￃﾩ", "é").replace("ￂ﾿", "¿").replace("ￃﾳ", "ó")
-								.replace("ￃﾡ", "á").replace("ￃﾺ", "ú").replace("ￃﾱ", "ñ").replace("￢ﾀﾓ", "–"));
-				// fichaRespuesta = mapeoDatos.respuestaToFichaRespuesta(respuesta);
-				fichaPregunta.setRespuesta(fichaRespuesta);
+	public Map<String, List<String>> getAllAsignaturaByCurso() {
+		List<Map<String, String>> listaCursos = hashMapCurso();
+		Map<String, List<String>> asignaturasPorCurso = new HashMap<>();
+		for (Map<String, String> asignatura : listaCursos) {
+			// Obtenermos los valores por las claves curso y asignatura
+			String curso = asignatura.get("curso");
+			String asignaturaNombre = asignatura.get("asignatura");
+			//insertamos como clave los valores de curso y añadimos en una lista los valores de asignaturas
+			asignaturasPorCurso.putIfAbsent(curso, new ArrayList<>());
+			asignaturasPorCurso.get(curso).add(asignaturaNombre);
+		}
+		return asignaturasPorCurso;
+	}
+	
+	public Map<String, List<String>> getAsignaturaByCurso(String curso) {
+		List<Map<String, String>> lista = hashMapCurso();
+		Map<String, List<String>> asignaturaByCurso = new HashMap<>();
+        for (Map<String, String> hashMap : lista) {
+        	if (hashMap.containsKey(curso)) {
+        		String valor = hashMap.get(curso);
+        		asignaturaByCurso.putIfAbsent(curso, new ArrayList<>());
+        		asignaturaByCurso.get(curso).add(valor);
+            }
+        	else {
+        		System.out.println("No se ha encontrado curso");
+        	}
+        }
+			return asignaturaByCurso;
+	}
+	
+	public Alumno insertarAlumno(String nombre, String curso) {
+		Alumno nuevoAlumno = new Alumno();
+		Map<String, List<String>> cursoAlumno = getAsignaturaByCurso(curso);
+		nuevoAlumno.setNombre(nombre);
+		nuevoAlumno.setAsignaturasPorCurso(cursoAlumno);
+		repo.crearAlumno(nuevoAlumno);
+		return nuevoAlumno;
+	}
+	
+    public Curso crearCurso(String curso) {
+    	Curso nuevoCurso = new Curso();
+    	Map<String, List<String>> hashMap = getAsignaturaByCurso(curso) ;
+    	List<String> valores = new ArrayList<>();
+		for (String i : hashMap.keySet()) {
+			System.out.println("hash: " + i);
+			if (hashMap.get(i).equals(curso)) {
+			nuevoCurso.setNombre(i);
+			valores	 = hashMap.get(i);
 			}
-			lista.add(fichaPregunta);
-
-			// Cambiar caracteres
-
-			// repo.crearPersona(fichaPregunta);
-
-		} // System.out.println(lista.get(0).getListaRespuesta());
-		// System.out.println("Preguntas: " + listaPreguntas);
-		return listaPreguntas;
-	}
-
+		}
+    	nuevoCurso.setListaAsignaturas(valores);
+    	repo.crearCurso(nuevoCurso);
+    	
+    	return nuevoCurso;
+    }
 }
-*/

@@ -236,20 +236,17 @@ public class ServiceXMLImpl implements ServiceXML {
 		String documento = "<documento>";
 
 		for (PreguntaTest pregunta : listaPregunta) {
-
+			
 			documento += "<test id=\"" + pregunta.getIdentificador() + "\">";
 			documento += insertarPreguta(pregunta);
-
+			
 			for (RespuestaTest respuesta : listaRespuesta) {
 				documento += insertarRespuesta(respuesta, pregunta.getIdentificador());
-
 			}
 			documento += "</pregunta></test>";
-
 		}
 		documento += "</documento>";
 		return documento;
-
 	}
 
 	@Override

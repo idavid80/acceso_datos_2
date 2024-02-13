@@ -1,5 +1,5 @@
 package com.evaluacion.acceso_datos.repository;
-/*
+
 
 import java.util.List;
 
@@ -10,9 +10,11 @@ import javax.persistence.TypedQuery;
 
 import org.springframework.stereotype.Repository;
 
+import com.cesur.ficheros.servicios.FichaPregunta;
+import com.cesur.ficheros.servicios.FichaRespuesta;
 import com.evaluacion.acceso_datos.entities.Alumno;
-import com.evaluacion.acceso_datos.entities.FichaPregunta;
-import com.evaluacion.acceso_datos.entities.FichaRespuesta;
+import com.evaluacion.acceso_datos.entities.Asignatura;
+import com.evaluacion.acceso_datos.entities.Curso;
 
 
 @Repository
@@ -32,21 +34,84 @@ public class RepositoryObjectDB {
 		emf.close();
 	}
 
+    public Asignatura crearAsignatura(String asignatura, String curso) {
+        conectar();
+        
+        em.getTransaction().begin();
+        
+        Asignatura nuevaAsignatura = new Asignatura();
+        nuevaAsignatura.setAsignatura(asignatura);
+        nuevaAsignatura.setCurso(curso);
+        em.persist(nuevaAsignatura);
 
-	public String crearPregunta(FichaPregunta pregunta) {
+        em.getTransaction().commit();
+/*
+        TypedQuery<Persona> query = em.createQuery("SELECT p FROM Persona p", Persona.class);
+        List<Persona> results = query.getResultList();
+        for (Persona p : results) {
+            System.out.println(p.getNombre());
+        }
+*/
+        em.close();
+        return nuevaAsignatura;
+    }
+    
+    public Alumno crearAlumno(Alumno alumno) {
+        conectar();
+        
+        em.getTransaction().begin();
+        
+        Alumno nuevoAlumno = new Alumno();
+        nuevoAlumno.setNombre(alumno.getNombre());
+        nuevoAlumno.setAsignaturasPorCurso(alumno.getAsignaturasPorCurso());
+        em.persist(nuevoAlumno);
 
-		conectar();
-		em.getTransaction().begin();
-		em.persist(pregunta);
-		em.getTransaction().commit();
-		TypedQuery<FichaPregunta> query = em.createQuery("SELECT p FROM FichaPregunta p", FichaPregunta.class);
-		List<FichaPregunta> results = query.getResultList();
-		for (FichaPregunta p : results) {
-			System.out.printf( "Pregunta %s: es %s.", p.getTexto(), p.getEsSeleccion());
-		}
-		em.close();
-		return "OK";
-	}
+        em.getTransaction().commit();
+/*
+        TypedQuery<Persona> query = em.createQuery("SELECT p FROM Persona p", Persona.class);
+        List<Persona> results = query.getResultList();
+        for (Persona p : results) {
+            System.out.println(p.getNombre());
+        }
+*/
+        em.close();
+        return nuevoAlumno;
+    }
+    
+    public Curso crearCurso(Curso curso) {
+        conectar();
+        
+        em.getTransaction().begin();
+        
+        Curso nuevoCurso = new Curso();
+        nuevoCurso.setNombre(curso.getNombre());
+        nuevoCurso.setListaAsignaturas(curso.getListaAsignaturas());
+        em.persist(nuevoCurso);
+
+        em.getTransaction().commit();
+/*
+        TypedQuery<Persona> query = em.createQuery("SELECT p FROM Persona p", Persona.class);
+        List<Persona> results = query.getResultList();
+        for (Persona p : results) {
+            System.out.println(p.getNombre());
+        }
+*/
+        em.close();
+        return nuevoCurso;
+    }
+    
+
+    public List<Asignatura> mostrarAsignatura() {
+        conectar();
+
+        TypedQuery<Asignatura> query = em.createQuery("SELECT a FROM Asignatura a", Asignatura.class);
+        List<Asignatura> results = query.getResultList();
+       
+        cerrar();
+        return results;
+    }
+    
+    
 
 	public List<FichaPregunta> mostrarPersona() {
 		conectar();
@@ -105,4 +170,4 @@ public class RepositoryObjectDB {
 	}
 
 }
-*/
+
