@@ -9,6 +9,16 @@ public class RespuestaTest {
 	@XmlAttribute(name="identificador")
 	protected int identificador;
 	
+	
+	public int idPregunta;
+	
+	public int getIdPregunta() {
+		return idPregunta;
+	}
+	public void setIdPregunta(int idPregunta) {
+		this.idPregunta = idPregunta;
+	}
+
 	String respuesta;
 	boolean esCorrecta;
 	
@@ -24,6 +34,13 @@ public class RespuestaTest {
 	public void setEsCorrecta(boolean esCorrecta) {
 		this.esCorrecta = esCorrecta;
 	}
+	
+	
+	
+	
+	public RespuestaTest() {
+	}
+	
 	public RespuestaTest(String respuesta, boolean esCorrecta) {
 		super();
 		this.respuesta = respuesta;

@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.evaluacion.acceso_datos.entities.Pregunta;
 import com.evaluacion.acceso_datos.entities.PreguntaTest;
+import com.evaluacion.acceso_datos.entities.RespuestaTest;
 import com.evaluacion.acceso_datos.service.ServiceXMLImpl;
 
 @Controller
@@ -20,7 +21,6 @@ public class ControllerXML {
 
     @Autowired
     protected ServiceXMLImpl service;
-
 
     @PostMapping("/listado")
     @ResponseBody
@@ -61,6 +61,11 @@ public class ControllerXML {
         return service.testXML();
     }
     
+    @GetMapping("/test-respuestas")
+    @ResponseBody
+    public List<RespuestaTest> getRespuestaTestFromApi() {
+        return service.getRespuestaTestFromApi();
+    }
     
     
    

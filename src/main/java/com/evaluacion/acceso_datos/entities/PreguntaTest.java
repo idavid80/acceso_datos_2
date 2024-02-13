@@ -4,20 +4,24 @@ import java.util.ArrayList;
 import java.util.List;
 
 import jakarta.xml.bind.annotation.XmlAttribute;
+import jakarta.xml.bind.annotation.XmlElement;
+import jakarta.xml.bind.annotation.XmlElementWrapper;
 import jakarta.xml.bind.annotation.XmlRootElement;
 
 
-@XmlRootElement(name = "test")
+@XmlRootElement(name = "pregunta")
 public class PreguntaTest {
 
 		
-	@XmlAttribute(name="identificador")
+	@XmlAttribute(name="id_pregunta")
 	protected int identificador;
 
 	String pregunta;
 	boolean esMultiple;
 	
-	List<RespuestaTest> respuestaTest;
+	@XmlElementWrapper(name = "respuesta")
+	@XmlElement(name = "respuesta")
+	public List<RespuestaTest> respuestaTest = new ArrayList<>();
 
 	public int getIdentificador() {
 		return identificador;
@@ -48,19 +52,21 @@ public class PreguntaTest {
 		
 	}
 	
-	public void getRespuesta(List<RespuestaTest> lista) {
-		for(int i = 0; i < lista.size(); i++ ) {
-			lista.get(i);
-		}
-	}
-
 	public List<RespuestaTest> getRespuestaTest() {
 		return respuestaTest;
 	}
-
+	
 	public void setRespuestaTest(List<RespuestaTest> respuestaTest) {
 		this.respuestaTest = respuestaTest;
 	}
+
+	/*public void getRespuesta(List<RespuestaTest> lista) {
+		for(int i = 0; i < lista.size(); i++ ) {
+			lista.get(i);
+		}
+	}*/
+
+
 
 	public PreguntaTest(int identificador, String pregunta, boolean esMultiple) {
 		super();
