@@ -24,9 +24,8 @@ public class ControllerXML {
 
     @PostMapping("/listado")
     @ResponseBody
-    public List<PreguntaTest> listado() {
+    public List<PreguntaTest> listadoTest() {
     	return service.listado();
-
     }
 
     @GetMapping("/prueba")
@@ -35,6 +34,7 @@ public class ControllerXML {
     	return "OK, conectado";
 
     }
+    
     @PutMapping("/insertar")
     @ResponseBody
     public String insertar() {
