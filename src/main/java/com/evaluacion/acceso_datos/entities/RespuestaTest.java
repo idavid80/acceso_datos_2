@@ -34,10 +34,7 @@ public class RespuestaTest {
 	public void setEsCorrecta(boolean esCorrecta) {
 		this.esCorrecta = esCorrecta;
 	}
-	
-	
-	
-	
+
 	public RespuestaTest() {
 	}
 	

@@ -7,7 +7,7 @@ import com.evaluacion.acceso_datos.entities.PreguntaTest;
 
 public interface ServiceXML {
 	
-    public List<PreguntaTest> listado();
+    public List<PreguntaTest> listadoTest();
 
     public String insertar();
     

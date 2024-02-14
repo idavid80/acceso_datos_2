@@ -22,11 +22,10 @@ public class ControllerXML {
     @Autowired
     protected ServiceXMLImpl service;
 
-    @PostMapping("/listado")
+    @PostMapping("/listado-test")
     @ResponseBody
-    public List<PreguntaTest> listado() {
-    	return service.listado();
-
+    public List<PreguntaTest> listadoTest() {
+    	return service.listadoTest();
     }
 
     @GetMapping("/prueba")
@@ -35,6 +34,7 @@ public class ControllerXML {
     	return "OK, conectado";
 
     }
+    
     @PutMapping("/insertar")
     @ResponseBody
     public String insertar() {

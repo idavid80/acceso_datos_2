@@ -139,7 +139,7 @@ public class ServiceXMLImpl implements ServiceXML {
 	}
 
 	@Override
-	public List<PreguntaTest> listado() {
+	public List<PreguntaTest> listadoTest() {
 
 		List<PreguntaTest> test = new ArrayList<>();
 		try {
@@ -206,7 +206,7 @@ public class ServiceXMLImpl implements ServiceXML {
 	 * //System.out.println(documento); return documento; }
 	 */
 	public String insertarTest(List<PreguntaTest> listaPregunta) {
-		String documento = "<documento>";
+		String documento = "";
 
 		for (PreguntaTest pregunta : listaPregunta) {
 
@@ -215,12 +215,9 @@ public class ServiceXMLImpl implements ServiceXML {
 
 			for (RespuestaTest respuesta : pregunta.respuestaTest) {
 				documento += insertarRespuesta(respuesta, pregunta.getIdentificador());
-
 			}
 			documento += "</pregunta></test>";
-
 		}
-		documento += "</documento>";
 		return documento;
 	}
 	/*
@@ -233,7 +230,7 @@ public class ServiceXMLImpl implements ServiceXML {
 	public String testXML() {
 		List<PreguntaTest> listaPregunta = getTestFromApi();
 		List<RespuestaTest> listaRespuesta = getRespuestaTestFromApi();
-		String documento = "<documento>";
+		String documento = "";
 
 		for (PreguntaTest pregunta : listaPregunta) {
 			
@@ -245,7 +242,6 @@ public class ServiceXMLImpl implements ServiceXML {
 			}
 			documento += "</pregunta></test>";
 		}
-		documento += "</documento>";
 		return documento;
 	}
 
@@ -261,11 +257,9 @@ public class ServiceXMLImpl implements ServiceXML {
 
 			XPathQueryService service = repo.obtenerServicioXPath();
 			service.query(query);
-
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
-
 		return "OK";
 	}
 

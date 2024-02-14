@@ -60,13 +60,14 @@ public class PreguntaTest {
 		this.respuestaTest = respuestaTest;
 	}
 
-	/*public void getRespuesta(List<RespuestaTest> lista) {
+	public void getRespuesta(List<RespuestaTest> lista) {
 		for(int i = 0; i < lista.size(); i++ ) {
 			lista.get(i);
 		}
-	}*/
-
-
+	}
+	
+	public PreguntaTest() {		
+	}
 
 	public PreguntaTest(int identificador, String pregunta, boolean esMultiple) {
 		super();
@@ -74,6 +75,5 @@ public class PreguntaTest {
 		this.pregunta = pregunta;
 		this.esMultiple = esMultiple;
 	}
-	
 	
 }
