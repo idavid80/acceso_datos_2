@@ -62,10 +62,11 @@ public class ControllerObjectDB {
 	}
 	
 	@ResponseBody
-	@PostMapping("/mostrar-alumno")
+	@GetMapping("/mostrar-alumno")
 	public List<Alumno> mostrarAlumno(){
 		return servicio.mostrarAlumno();
 	}
-
+	
+	
 }
 	

@@ -19,7 +19,7 @@ public class RepositoryObjectDB {
 
 	protected void conectar() {
 
-		emf = Persistence.createEntityManagerFactory("db/alumnos.odb");
+		emf = Persistence.createEntityManagerFactory("db/prueba2.odb");
 		em = emf.createEntityManager();
 	}
 
