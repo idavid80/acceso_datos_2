@@ -8,17 +8,15 @@ import jakarta.xml.bind.annotation.XmlElement;
 import jakarta.xml.bind.annotation.XmlElementWrapper;
 import jakarta.xml.bind.annotation.XmlRootElement;
 
-
 @XmlRootElement(name = "pregunta")
 public class PreguntaTest {
 
-		
-	@XmlAttribute(name="id_pregunta")
+	@XmlAttribute(name = "id_pregunta")
 	protected int identificador;
 
 	String pregunta;
 	boolean esMultiple;
-	
+
 	@XmlElementWrapper(name = "respuesta")
 	@XmlElement(name = "respuesta")
 	public List<RespuestaTest> respuestaTest = new ArrayList<>();
@@ -46,27 +44,24 @@ public class PreguntaTest {
 	public void setEsMultiple(boolean esMultiple) {
 		this.esMultiple = esMultiple;
 	}
-	
-	public void addRespuesta(RespuestaTest respuesta ) {
+
+	public void addRespuesta(RespuestaTest respuesta) {
 		respuestaTest.add(respuesta);
-		
+
 	}
-	
+
 	public List<RespuestaTest> getRespuestaTest() {
 		return respuestaTest;
 	}
-	
+
 	public void setRespuestaTest(List<RespuestaTest> respuestaTest) {
 		this.respuestaTest = respuestaTest;
 	}
 
-	/*public void getRespuesta(List<RespuestaTest> lista) {
-		for(int i = 0; i < lista.size(); i++ ) {
-			lista.get(i);
-		}
-	}*/
-
-
+	/*
+	 * public void getRespuesta(List<RespuestaTest> lista) { for(int i = 0; i <
+	 * lista.size(); i++ ) { lista.get(i); } }
+	 */
 
 	public PreguntaTest(int identificador, String pregunta, boolean esMultiple) {
 		super();
@@ -74,6 +69,5 @@ public class PreguntaTest {
 		this.pregunta = pregunta;
 		this.esMultiple = esMultiple;
 	}
-	
-	
+
 }

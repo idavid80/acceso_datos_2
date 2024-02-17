@@ -15,43 +15,41 @@ import com.evaluacion.acceso_datos.entities.Alumno;
 import com.evaluacion.acceso_datos.entities.Asignatura;
 import com.evaluacion.acceso_datos.service.ServiceObjectDB;
 
-
 @Controller
 @RequestMapping("/evaluacion")
 public class ControllerObjectDB {
 
 	@Autowired
 	protected ServiceObjectDB servicio;
-	//protected ServiceObject servicio;
-	
+
 	@ResponseBody
 	@GetMapping("/crear-asignatura")
-    public Asignatura crearAsignatura(@RequestParam String asignatura, @RequestParam String curso) {
-    		
-        return servicio.crearAsignatura(asignatura, curso);
+	public Asignatura crearAsignatura(@RequestParam String asignatura, @RequestParam String curso) {
+
+		return servicio.crearAsignatura(asignatura, curso);
 	}
-	
+
 	@ResponseBody
 	@GetMapping("/mostrar-asignatura")
-	public List<Asignatura> mostrarAsignatura(){
+	public List<Asignatura> mostrarAsignatura() {
 		return servicio.mostrarAsignatura();
 	}
-	
+
 	@ResponseBody
 	@GetMapping("/mostrar-hashmap")
-	List<Map<String, String>> hashMapCurso(){
+	List<Map<String, String>> hashMapCurso() {
 		return servicio.hashMapCurso();
 	}
-	
+
 	@ResponseBody
 	@GetMapping("/mostrar-todas-asignaturas-cursos")
-	Map<String, List<String>> getAllAsignaturaByCurso(){
+	Map<String, List<String>> getAllAsignaturaByCurso() {
 		return servicio.getAllAsignaturaByCurso();
 	};
 
 	@ResponseBody
 	@GetMapping("/mostrar-asignaturas-cursos")
-	List<String> getAsignaturaByCurso(@RequestParam String curso){
+	List<String> getAsignaturaByCurso(@RequestParam String curso) {
 		return servicio.getAsignaturaByCurso(curso);
 	};
 
@@ -60,13 +58,11 @@ public class ControllerObjectDB {
 	public Alumno insertarAlumno(@RequestParam String nombre, @RequestParam String curso) {
 		return servicio.insertarAlumno(nombre, curso);
 	}
-	
+
 	@ResponseBody
 	@GetMapping("/mostrar-alumno")
-	public List<Alumno> mostrarAlumno(){
+	public List<Alumno> mostrarAlumno() {
 		return servicio.mostrarAlumno();
 	}
-	
-	
+
 }
-	
