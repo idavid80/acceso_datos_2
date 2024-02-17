@@ -19,142 +19,84 @@ import com.evaluacion.acceso_datos.repository.RepositoryXML;
 
 @Service
 public class ServiceXMLImpl implements ServiceXML {
-	/*
-	 * // sugerencia Guillamon private static String URI =
-	 * "xmldb:exist://localhost:8080/exist/xmlrpc";
-	 * 
-	 * private XPathQueryService obtenerServicioXPath() throws Exception { String
-	 * driver = "org.exist.xmldb.DatabaseImpl"; //Driver Class cl =
-	 * Class.forName(driver);//Cargar el driver Database database = (Database)
-	 * cl.newInstance(); //Instancia de la BD
-	 * database.setProperty("create-database", "true");
-	 * DatabaseManager.registerDatabase(database); //Registrar la BD //Accedemos a
-	 * la colección Collection col =DatabaseManager.getCollection(
-	 * "xmldb:exist://localhost:8080/exist/xmlrpc/db/", "admin", "");
-	 * 
-	 * XPathQueryService service =(XPathQueryService)
-	 * col.getService("XPathQueryService", "1.0"); service.setProperty("pretty",
-	 * "true"); service.setProperty("encoding", "ISO-8859-1");
-	 * 
-	 * return service; } // Fin sugerencia Guillamon
-	 * 
-	 */
+
 	@Autowired
 	protected ApiRepository api;
 	@Autowired
 	protected RepositoryXML repo;
 
+	// Obtener lista test desde la API
 	public Pregunta[] getApi() {
-		// public List<Test> getApi() {
+
 		Pregunta[] listaPreguntas = api.obtenerJSON();
-		System.out.println(listaPreguntas);
-		// String prueba = "ￂ﾿Quￃﾩ tipo de trama de administraciￃﾳn puede emitir
-		// regularmente un AP?";
+
 		return listaPreguntas;
-		/*
-		 * // Mapper mapeoDatos = new Mapper(); Test preguntaTest = new Test();
-		 * RespuestaTest respuestaTest = new RespuestaTest(); List<Test> lista = new
-		 * ArrayList<>(); List<RespuestaTest> listaRespuesta = new ArrayList<>(); for
-		 * (Pregunta pregunta : listaPreguntas) { preguntaTest = new Test();
-		 * preguntaTest.setPregunta(pregunta.getTexto().replace("ￃﾭ", "í").replace("ￃﾩ",
-		 * "é").replace("ￂ﾿", "¿") .replace("ￃﾳ", "ó").replace("ￃﾡ", "á").replace("ￃﾺ",
-		 * "ú").replace("ￃﾱ", "ñ").replace("￢ﾀﾓ", "–"));
-		 * pregunta.setTexto(pregunta.getTexto().replace("ￃﾭ", "í").replace("ￃﾩ",
-		 * "é").replace("ￂ﾿", "¿") .replace("ￃﾳ", "ó").replace("ￃﾡ", "á").replace("ￃﾺ",
-		 * "ú").replace("ￃﾱ", "ñ").replace("￢ﾀﾓ", "–")); // fichaPregunta =
-		 * mapeoDatos.preguntaToFichaPregunta(pregunta); for (Respuesta respuesta :
-		 * pregunta.getListaRespuesta()) { respuestaTest.setRespuesta(
-		 * respuesta.getTexto().replace("ￃﾭ", "í").replace("ￃﾩ", "é").replace("ￂ﾿",
-		 * "¿").replace("ￃﾳ", "ó") .replace("ￃﾡ", "á").replace("ￃﾺ", "ú").replace("ￃﾱ",
-		 * "ñ").replace("￢ﾀﾓ", "–")); respuesta.setTexto(
-		 * respuesta.getTexto().replace("ￃﾭ", "í").replace("ￃﾩ", "é").replace("ￂ﾿",
-		 * "¿").replace("ￃﾳ", "ó") .replace("ￃﾡ", "á").replace("ￃﾺ", "ú").replace("ￃﾱ",
-		 * "ñ").replace("￢ﾀﾓ", "–")); // fichaRespuesta =
-		 * mapeoDatos.respuestaToFichaRespuesta(respuesta);
-		 * listaRespuesta.add(respuestaTest);
-		 * 
-		 * } preguntaTest.setRespuestaTest(listaRespuesta);
-		 * System.out.println("listaRespuesta: " + preguntaTest.getRespuestaTest());
-		 * lista.add(preguntaTest);
-		 * 
-		 * // Cambiar caracteres
-		 * 
-		 * // repo.crearPersona(fichaPregunta);
-		 * 
-		 * } // System.out.println(lista.get(0).getListaRespuesta()); //
-		 * System.out.println("Preguntas: " + listaPreguntas); return lista;
-		 */
 	}
 
-	public List<RespuestaTest> getRespuestaTestFromApi() {
+	// Mapea la lista Pregunta de la API a una lista PreguntaTest para BBDD
+	public List<PreguntaTest> getTestFromApi() {
+		// Inicializamos Clase
+		List<PreguntaTest> getTest = new ArrayList<>();
+
+		// Obtenemos los datos de la API
+		Pregunta[] listaPreguntasApi = api.obtenerJSON();
+		// Inicializamos el id para los test
+		int id = 0;
+		for (Pregunta pregunta : listaPreguntasApi) {
+			id++;
+			// Mapeamos Preguntas
+			PreguntaTest getPregunta = new PreguntaTest(id, pregunta.getTexto(), pregunta.isEsSeleccion());
+			getTest.add(getPregunta);
+
+			for (Respuesta respuesta : pregunta.listaRespuesta) {
+				// Mapeamos Respuesta
+				RespuestaTest getRespuesta = new RespuestaTest(respuesta.getRespuesta(), respuesta.isEsCorrecta());
+				getRespuesta.setIdPregunta(id);
+
+				getPregunta.addRespuesta(getRespuesta);
+			}
+
+		}
+
+		return getTest;
+	}
+
+	// Mapea Lista respuesta desde la api
+	public List<RespuestaTest> getListaRespuestaApi() {
 
 		Pregunta[] listaPreguntasApi = api.obtenerJSON();
-		// List<PreguntaTest> testFromApi = new ArrayList<>();
+
 		List<RespuestaTest> getListaRespuesta = new ArrayList<>();
 		RespuestaTest getRespuesta = new RespuestaTest();
 		int id = 0;
 		for (Pregunta pregunta : listaPreguntasApi) {
 			id++;
-			// PreguntaTest getPregunta = new PreguntaTest(id, pregunta.getTexto(),
-			// pregunta.isEsSeleccion());
-			// testFromApi.add(getPregunta);
 
-			getListaRespuesta = new ArrayList<>();
 			for (Respuesta respuesta : pregunta.listaRespuesta) {
-				System.out.println("Respuesta" + respuesta.getRespuesta());
+
+				getRespuesta = new RespuestaTest();
 				getRespuesta.setRespuesta(respuesta.getRespuesta());
 				getRespuesta.setIdPregunta(id);
 				getRespuesta.setEsCorrecta(respuesta.isEsCorrecta());
 
 				getListaRespuesta.add(getRespuesta);
-
 			}
-
 		}
-
 		return getListaRespuesta;
 	}
 
-	public List<PreguntaTest> getTestFromApi() {
-
-		Pregunta[] listaPreguntasApi = api.obtenerJSON();
-		List<PreguntaTest> testFromApi = new ArrayList<>();
-		int id = 0;
-		for (Pregunta pregunta : listaPreguntasApi) {
-			id++;
-			PreguntaTest getPregunta = new PreguntaTest(id, pregunta.getTexto(), pregunta.isEsSeleccion());
-			testFromApi.add(getPregunta);
-
-			for (Respuesta respuesta : pregunta.listaRespuesta) {
-				RespuestaTest getRespuesta = new RespuestaTest(respuesta.getRespuesta(), respuesta.isEsCorrecta());
-						getRespuesta.setIdPregunta(id);
-
-				getPregunta.addRespuesta(getRespuesta);
-			}
-
-
-		}
-
-		return testFromApi;
-	}
-
-	@Override
-	public List<PreguntaTest> listado() {
+	public List<PreguntaTest> getTestBD() {
 
 		List<PreguntaTest> test = new ArrayList<>();
 		try {
 			XPathQueryService service = repo.obtenerServicioXPath();
 
 			// Consulta a lanzar
-			// ResourceSet result = service.query("for $b in
-			// doc('Documentos/Prueba1')//documento return $b");
-			// String query = "doc('Documentos/vino_xml')/vinos/vino";
-			String query2 = "doc('Documentos/test1.xml')/xml/documento/test";
+			String pathXML = "doc('Documentos/test1.xml')/xml";
 
 			// XPathQueryService service = obtenerServicioXPath();
-			ResourceSet result = service.query(query2);
-			result = repo.queryDB(query2);
-			
+			ResourceSet result = service.query(pathXML);
+			result = repo.queryDB(pathXML);
 
 			ResourceIterator i = result.getIterator();
 			while (i.hasMoreResources()) { // Procesamos el resultado
@@ -171,77 +113,32 @@ public class ServiceXMLImpl implements ServiceXML {
 		return test;
 	}
 
-	public String insertarPreguta(PreguntaTest pregunta) {
+	// Generador etiquetas de pregunta
+	public String etiquetarPreguta(PreguntaTest pregunta) {
 		String etiqueta = "<pregunta es_multiple=\"" + pregunta.isEsMultiple() + "\">" + pregunta.getPregunta();
 
 		return etiqueta;
 	}
 
-	public String insertarRespuesta(RespuestaTest respuesta, int idPregunta) {
+	// Generador etiquetas de respuesta
+	public String etiquetarRespuesta(RespuestaTest respuesta, int idPregunta) {
 		String etiqueta = "<respuesta id_pregunta=\"" + idPregunta + "\">" + respuesta.getRespuesta() + "<es_correcta>"
 				+ respuesta.isEsCorrecta() + "</es_correcta></respuesta>";
 		return etiqueta;
 	}
 
-	/*
-	 * public String insertarCierrePregunta(RespuestaTest respuesta) { String
-	 * etiqueta = "</pregunta>"; return etiqueta; } public String
-	 * insertarPregutaRespuestas(PreguntaTest pregunta) { String documento =
-	 * "<test id=\"" + pregunta.getIdentificador() + "\">"; documento +=
-	 * insertarPreguta(pregunta);
-	 * 
-	 * 
-	 * int i = 1;
-	 * 
-	 * 
-	 * while(i != pregunta.getIdentificador()) { documento +=
-	 * insertarRespuesta(pregunta.getRespuestaTest().get(i-1),
-	 * pregunta.getIdentificador()); i++; }
-	 * 
-	 * for(RespuestaTest respuesta: pregunta.getRespuestaTest()) {
-	 * 
-	 * documento += insertarRespuesta(respuesta, pregunta.getIdentificador()); }
-	 * documento += "</pregunta></test>";
-	 * 
-	 * //System.out.println(documento); return documento; }
-	 */
-	public String insertarTest(List<PreguntaTest> listaPregunta) {
-		String documento = "<documento>";
-
-		for (PreguntaTest pregunta : listaPregunta) {
-
-			documento += "<test id=\"" + pregunta.getIdentificador() + "\">";
-			documento += insertarPreguta(pregunta);
-
-			for (RespuestaTest respuesta : pregunta.respuestaTest) {
-				documento += insertarRespuesta(respuesta, pregunta.getIdentificador());
-
-			}
-			documento += "</pregunta></test>";
-
-		}
-		documento += "</documento>";
-		return documento;
-	}
-	/*
-	 * public String testXML() { List<PreguntaTest> listaPregunta =
-	 * getTestFromApi();
-	 * 
-	 * return insertarTest(listaPregunta); }
-	 */
-
 	public String testXML() {
 		List<PreguntaTest> listaPregunta = getTestFromApi();
-		List<RespuestaTest> listaRespuesta = getRespuestaTestFromApi();
+		List<RespuestaTest> listaRespuesta = getListaRespuestaApi();
 		String documento = "<documento>";
 
 		for (PreguntaTest pregunta : listaPregunta) {
-			
+
 			documento += "<test id=\"" + pregunta.getIdentificador() + "\">";
-			documento += insertarPreguta(pregunta);
-			
+			documento += etiquetarPreguta(pregunta);
+
 			for (RespuestaTest respuesta : listaRespuesta) {
-				documento += insertarRespuesta(respuesta, pregunta.getIdentificador());
+				documento += etiquetarRespuesta(respuesta, pregunta.getIdentificador());
 			}
 			documento += "</pregunta></test>";
 		}
@@ -249,15 +146,11 @@ public class ServiceXMLImpl implements ServiceXML {
 		return documento;
 	}
 
-	@Override
 	public String insertar() {
 
 		try {
-			// String sQuery = "update insert <documento id=\"6\"><nombre>Prueba
-			// 6</nombre></documento>" +
-			// " into doc('Documentos/test1.xml')/xml";
 
-			String query = "update insert " + testXML() + " into doc('Documentos/test1.xml')/xml";
+			String query = "update insert " + testXML() + " into doc('Documentos/test2.xml')/xml";
 
 			XPathQueryService service = repo.obtenerServicioXPath();
 			service.query(query);

@@ -17,41 +17,41 @@ import jakarta.xml.bind.Unmarshaller;
 @Repository
 public class RepositoryXML {
 
-    private static String URI = "xmldb:exist://localhost:8080/exist/xmlrpc";
+	private static String URI = "xmldb:exist://localhost:8080/exist/xmlrpc";
 
-    public XPathQueryService obtenerServicioXPath() throws Exception {
-    	
-        String driver = "org.exist.xmldb.DatabaseImpl"; //Driver
-        Class cl = Class.forName(driver);//Cargar el driver
-        Database database = (Database) cl.newInstance(); //Instancia de la BD
-        database.setProperty("create-database", "true");
-        DatabaseManager.registerDatabase(database); //Registrar la BD
-        //Accedemos a la colección
-        Collection col =DatabaseManager.getCollection("xmldb:exist://localhost:8080/exist/xmlrpc/db/", "admin", "");
+	public XPathQueryService obtenerServicioXPath() throws Exception {
 
-        XPathQueryService service =(XPathQueryService) col.getService("XPathQueryService", "1.0");
-        service.setProperty("pretty", "true");
-        service.setProperty("encoding", "ISO-8859-1");
+		String driver = "org.exist.xmldb.DatabaseImpl"; // Driver
+		Class cl = Class.forName(driver);// Cargar el driver
+		Database database = (Database) cl.newInstance(); // Instancia de la BD
+		database.setProperty("create-database", "true");
+		DatabaseManager.registerDatabase(database); // Registrar la BD
+		// Accedemos a la colección
+		Collection col = DatabaseManager.getCollection("xmldb:exist://localhost:8080/exist/xmlrpc/db/", "admin", "");
 
-        return service;
-    }
-    
-    // Obtener Modelo XML
-    public PreguntaTest obtenerDocumento(String xml) throws Exception {
+		XPathQueryService service = (XPathQueryService) col.getService("XPathQueryService", "1.0");
+		service.setProperty("pretty", "true");
+		service.setProperty("encoding", "ISO-8859-1");
 
-    	JAXBContext jaxbContext = JAXBContext.newInstance(PreguntaTest.class);
-        Unmarshaller unmarshaller = jaxbContext.createUnmarshaller();
+		return service;
+	}
 
-        StringReader reader = new StringReader(xml);
-    
-        System.out.println("unmarshaller: " + unmarshaller);
-        return (PreguntaTest) unmarshaller.unmarshal(reader);
+	// Obtener Modelo XML
+	public PreguntaTest obtenerDocumento(String xml) throws Exception {
 
-    }
-    
-    public ResourceSet queryDB(String query) throws Exception {
-    	XPathQueryService service = obtenerServicioXPath();
-    	ResourceSet result = service.query(query);
-    	return result;
-    }
+		JAXBContext jaxbContext = JAXBContext.newInstance(PreguntaTest.class);
+		Unmarshaller unmarshaller = jaxbContext.createUnmarshaller();
+
+		StringReader reader = new StringReader(xml);
+
+		// System.out.println("unmarshaller: " + unmarshaller);
+		return (PreguntaTest) unmarshaller.unmarshal(reader);
+
+	}
+
+	public ResourceSet queryDB(String query) throws Exception {
+		XPathQueryService service = obtenerServicioXPath();
+		ResourceSet result = service.query(query);
+		return result;
+	}
 }

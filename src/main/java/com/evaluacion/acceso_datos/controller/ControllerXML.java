@@ -22,10 +22,10 @@ public class ControllerXML {
     @Autowired
     protected ServiceXMLImpl service;
 
-    @PostMapping("/listado")
+    @PostMapping("/get-bbdd-test")
     @ResponseBody
-    public List<PreguntaTest> listado() {
-    	return service.listado();
+    public List<PreguntaTest> getTestBD() {
+    	return service.getTestBD();
 
     }
 
@@ -48,23 +48,23 @@ public class ControllerXML {
     	return service.getApi();
     }
     
-    @PostMapping("/listado-api")
+    @PostMapping("/get-test-api")
     @ResponseBody
     public List<PreguntaTest> listadoApi() {
     	return service.getTestFromApi();
 
     }
     
-    @GetMapping("/test-xml")
+    @GetMapping("/ver-test-xml")
     @ResponseBody
     public String testXML() {
         return service.testXML();
     }
     
-    @GetMapping("/test-respuestas")
+    @GetMapping("/get-respuestas-api")
     @ResponseBody
-    public List<RespuestaTest> getRespuestaTestFromApi() {
-        return service.getRespuestaTestFromApi();
+    public List<RespuestaTest> getListaRespuestaApi() {
+        return service.getListaRespuestaApi();
     }
     
     

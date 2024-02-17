@@ -7,6 +7,7 @@ import jakarta.xml.bind.annotation.XmlAttribute;
 import jakarta.xml.bind.annotation.XmlElement;
 import jakarta.xml.bind.annotation.XmlElementWrapper;
 import jakarta.xml.bind.annotation.XmlRootElement;
+import jakarta.xml.bind.annotation.XmlTransient;
 
 @XmlRootElement(name = "pregunta")
 public class PreguntaTest {
@@ -20,6 +21,7 @@ public class PreguntaTest {
 	@XmlElementWrapper(name = "respuesta")
 	@XmlElement(name = "respuesta")
 	public List<RespuestaTest> respuestaTest = new ArrayList<>();
+
 
 	public int getIdentificador() {
 		return identificador;
@@ -63,6 +65,9 @@ public class PreguntaTest {
 	 * lista.size(); i++ ) { lista.get(i); } }
 	 */
 
+	public PreguntaTest() {
+		
+	}
 	public PreguntaTest(int identificador, String pregunta, boolean esMultiple) {
 		super();
 		this.identificador = identificador;

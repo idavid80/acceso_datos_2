@@ -6,10 +6,10 @@ import com.evaluacion.acceso_datos.entities.PreguntaTest;
 
 public interface ServiceXML {
 
-	public List<PreguntaTest> listado();
+	public String testXML();
+
+	public List<PreguntaTest> getTestBD();
 
 	public String insertar();
-
-	String insertarPreguta(PreguntaTest pregunta);
 
 }
