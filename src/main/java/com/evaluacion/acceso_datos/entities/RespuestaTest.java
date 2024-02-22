@@ -6,9 +6,10 @@ import jakarta.xml.bind.annotation.XmlRootElement;
 @XmlRootElement(name = "respuesta")
 public class RespuestaTest {
 
-	@XmlAttribute(name = "identificador")
-	protected int identificador;
-
+//	@XmlAttribute(name = "identificador")
+//	protected int identificador;
+/*
+	@XmlAttribute(name = "id_pregunta")
 	public int idPregunta;
 
 	public int getIdPregunta() {
@@ -18,7 +19,7 @@ public class RespuestaTest {
 	public void setIdPregunta(int idPregunta) {
 		this.idPregunta = idPregunta;
 	}
-
+*/
 	String respuesta;
 	boolean esCorrecta;
 

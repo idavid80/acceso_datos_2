@@ -11,5 +11,7 @@ public interface ServiceXML {
 	public List<PreguntaTest> getTestBD();
 
 	public String insertar();
+	
+	public String crearArchivoXML();
 
 }

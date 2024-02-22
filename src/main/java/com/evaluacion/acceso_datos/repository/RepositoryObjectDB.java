@@ -74,16 +74,37 @@ public class RepositoryObjectDB {
 	}
 
 
+	public List<String> mostrarAsignaturas() {
+		
+		conectar();
+
+		TypedQuery<Alumno> query = em.createQuery("SELECT a FROM Alumno a", Alumno.class);
+		List<Alumno> results = query.getResultList();
+		List<String> asignaturas = results.get(0).getAsignaturas();
+		for (String s : asignaturas)
+			System.out.println("hola");
+		cerrar();
+		
+		return results.get(0).getAsignaturas();
+
+	}
+	
 	public List<Alumno> mostrarAlumno() {
 
 		conectar();
 
 		TypedQuery<Alumno> query = em.createQuery("SELECT a FROM Alumno a", Alumno.class);
 		List<Alumno> results = query.getResultList();
+	
+		for (Alumno a : results)
+		//	System.out.println(results.get(1).getAsignaturas());
+			for (String s : a.getAsignaturas())
+				System.out.println(s);
 
 		cerrar();
 		return results;
 
 	}
+
 
 }

@@ -1,5 +1,9 @@
 package com.evaluacion.acceso_datos.service;
 
+import java.io.BufferedReader;
+import java.io.BufferedWriter;
+import java.io.File;
+import java.io.FileWriter;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -51,7 +55,7 @@ public class ServiceXMLImpl implements ServiceXML {
 			for (Respuesta respuesta : pregunta.listaRespuesta) {
 				// Mapeamos Respuesta
 				RespuestaTest getRespuesta = new RespuestaTest(respuesta.getRespuesta(), respuesta.isEsCorrecta());
-				getRespuesta.setIdPregunta(id);
+		//		getRespuesta.setIdPregunta(id);
 
 				getPregunta.addRespuesta(getRespuesta);
 			}
@@ -71,12 +75,12 @@ public class ServiceXMLImpl implements ServiceXML {
 		int id = 0;
 		for (Pregunta pregunta : listaPreguntasApi) {
 			id++;
-
+			
 			for (Respuesta respuesta : pregunta.listaRespuesta) {
 
 				getRespuesta = new RespuestaTest();
 				getRespuesta.setRespuesta(respuesta.getRespuesta());
-				getRespuesta.setIdPregunta(id);
+		//		getRespuesta.setIdPregunta(id);
 				getRespuesta.setEsCorrecta(respuesta.isEsCorrecta());
 
 				getListaRespuesta.add(getRespuesta);
@@ -92,7 +96,7 @@ public class ServiceXMLImpl implements ServiceXML {
 			XPathQueryService service = repo.obtenerServicioXPath();
 
 			// Consulta a lanzar
-			String pathXML = "doc('Documentos/test1.xml')/xml";
+			String pathXML = "doc('Documentos/test2.xml')/xml/documento/pregunta";
 
 			// XPathQueryService service = obtenerServicioXPath();
 			ResourceSet result = service.query(pathXML);
@@ -115,34 +119,36 @@ public class ServiceXMLImpl implements ServiceXML {
 
 	// Generador etiquetas de pregunta
 	public String etiquetarPreguta(PreguntaTest pregunta) {
-		String etiqueta = "<pregunta es_multiple=\"" + pregunta.isEsMultiple() + "\">" + pregunta.getPregunta();
+		String etiqueta = "<pregunta es_multiple=\"" + pregunta.isEsMultiple() + "\" id_pregunta=\"" + pregunta.getIdentificador() + "\"><texto>"+ pregunta.getPregunta() + "</texto>";
 
 		return etiqueta;
 	}
 
 	// Generador etiquetas de respuesta
 	public String etiquetarRespuesta(RespuestaTest respuesta, int idPregunta) {
-		String etiqueta = "<respuesta id_pregunta=\"" + idPregunta + "\">" + respuesta.getRespuesta() + "<es_correcta>"
+		String etiqueta = "<respuesta id_pregunta=\"" + idPregunta + "\"><opcion>" + respuesta.getRespuesta() + "</opcion><es_correcta>"
 				+ respuesta.isEsCorrecta() + "</es_correcta></respuesta>";
 		return etiqueta;
 	}
 
 	public String testXML() {
 		List<PreguntaTest> listaPregunta = getTestFromApi();
-		List<RespuestaTest> listaRespuesta = getListaRespuestaApi();
+	//	List<RespuestaTest> listaRespuesta = getListaRespuestaApi();
 		String documento = "<documento>";
 
 		for (PreguntaTest pregunta : listaPregunta) {
 
-			documento += "<test id=\"" + pregunta.getIdentificador() + "\">";
+	//		documento += "<test identificador=\"" + pregunta.getIdentificador() + "\">";
+
 			documento += etiquetarPreguta(pregunta);
 
-			for (RespuestaTest respuesta : listaRespuesta) {
+			for (RespuestaTest respuesta : pregunta.getRespuestaTest()) {
 				documento += etiquetarRespuesta(respuesta, pregunta.getIdentificador());
 			}
-			documento += "</pregunta></test>";
+			documento += "</pregunta>";
 		}
 		documento += "</documento>";
+		System.out.println(documento);
 		return documento;
 	}
 
@@ -162,4 +168,26 @@ public class ServiceXMLImpl implements ServiceXML {
 		return "OK";
 	}
 
+	
+	public String crearArchivoXML() {
+
+		
+		File file = new File ("db/test2.xml");
+		String datosXML = testXML();
+
+		try {
+        // Si el archivo no existe es creado
+        if (!file.exists()) {
+            file.createNewFile();
+        }
+        FileWriter fw = new FileWriter(file);
+        BufferedWriter bw = new BufferedWriter(fw);
+        bw.write(datosXML);
+        bw.close();
+    } catch (Exception e) {
+        e.printStackTrace();
+    }
+		return "Archivo creado";
+
+	}
 }

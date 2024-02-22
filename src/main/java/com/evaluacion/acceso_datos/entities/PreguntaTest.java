@@ -3,6 +3,8 @@ package com.evaluacion.acceso_datos.entities;
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.persistence.Id;
+
 import jakarta.xml.bind.annotation.XmlAttribute;
 import jakarta.xml.bind.annotation.XmlElement;
 import jakarta.xml.bind.annotation.XmlElementWrapper;
@@ -11,8 +13,9 @@ import jakarta.xml.bind.annotation.XmlTransient;
 
 @XmlRootElement(name = "pregunta")
 public class PreguntaTest {
-
-	@XmlAttribute(name = "id_pregunta")
+	
+	@Id
+	@XmlAttribute(name = "identificador")
 	protected int identificador;
 
 	String pregunta;
@@ -22,7 +25,8 @@ public class PreguntaTest {
 	@XmlElement(name = "respuesta")
 	public List<RespuestaTest> respuestaTest = new ArrayList<>();
 
-
+	
+	@XmlTransient
 	public int getIdentificador() {
 		return identificador;
 	}
@@ -51,7 +55,7 @@ public class PreguntaTest {
 		respuestaTest.add(respuesta);
 
 	}
-
+	@XmlTransient
 	public List<RespuestaTest> getRespuestaTest() {
 		return respuestaTest;
 	}

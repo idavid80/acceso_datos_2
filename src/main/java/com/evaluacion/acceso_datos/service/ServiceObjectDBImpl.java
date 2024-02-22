@@ -103,6 +103,9 @@ public class ServiceObjectDBImpl implements ServiceObjectDB {
 		return repo.mostrarAlumno();
 	}
 	
-
+	public List<String> mostrarAsignaturas() {
+		return repo.mostrarAsignaturas();
+	}
+	
 
 }

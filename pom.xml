@@ -112,6 +112,13 @@
     <artifactId>spring-boot-starter-data-mongodb</artifactId>
 </dependency>
 
+<!-- Dependencias Jasper -->
+		<dependency>
+		    <groupId>net.sf.jasperreports</groupId>
+		    <artifactId>jasperreports</artifactId>
+		    <version>6.20.0</version>
+		</dependency>
+
 	</dependencies>
 	<build>
 		<plugins>

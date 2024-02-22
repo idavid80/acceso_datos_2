@@ -64,5 +64,12 @@ public class ControllerObjectDB {
 	public List<Alumno> mostrarAlumno() {
 		return servicio.mostrarAlumno();
 	}
+	
+	@ResponseBody
+	@GetMapping("/mostrar")
+	public List<String> mostrarAsignaturas() {
+		return servicio.mostrarAsignaturas();
+	}
+	
 
 }

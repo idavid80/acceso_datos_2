@@ -68,5 +68,11 @@ public class ControllerXML {
     }
     
     
+    @GetMapping("/crear-archivo")
+    @ResponseBody
+    public String crearArchivoXML() {
+        return service.crearArchivoXML();
+    }
+    
    
 }
