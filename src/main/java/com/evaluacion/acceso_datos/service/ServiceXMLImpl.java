@@ -137,7 +137,7 @@ public class ServiceXMLImpl implements ServiceXML {
 			documento += "<test id=\"" + pregunta.getIdentificador() + "\">";
 			documento += etiquetarPreguta(pregunta);
 
-			for (RespuestaTest respuesta : listaRespuesta) {
+			for (RespuestaTest respuesta : pregunta.getRespuestaTest()) {
 				documento += etiquetarRespuesta(respuesta, pregunta.getIdentificador());
 			}
 			documento += "</pregunta></test>";
