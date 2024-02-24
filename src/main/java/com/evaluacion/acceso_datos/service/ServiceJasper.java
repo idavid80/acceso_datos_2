@@ -5,12 +5,10 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.util.ResourceUtils;
 
-import com.evaluacion.acceso_datos.collection.Estudiante;
-
+import com.evaluacion.acceso_datos.entities.Alumno;
 import net.sf.jasperreports.engine.JRException;
 import net.sf.jasperreports.engine.JasperCompileManager;
 import net.sf.jasperreports.engine.JasperFillManager;
@@ -25,50 +23,46 @@ import net.sf.jasperreports.export.SimplePdfReportConfiguration;
 @Service
 public class ServiceJasper {
 
-	public boolean generarInforme(List<Estudiante> listaEstudiantes) {
+	// generador de informe
+	public boolean generarInforme(List<Alumno> lista) {
 		long nowMillis = System.currentTimeMillis();
-        String nombreFichero = "test " + nowMillis + ".pdf";
-		
-		
+
+		// Nombre del archivo creado
+		String path = "./db/";
+		String nombreFichero = "test " + nowMillis + ".pdf";
+
 		Map<String, Object> empParams = new HashMap<String, Object>();
-		empParams.put("alumnoData", "Informe de Alumnos");
+		empParams.put("title", "Informe Alumnos");
 		JasperPrint empReport;
 		try {
 			empReport = JasperFillManager.fillReport(
-							JasperCompileManager.compileReport(
-									ResourceUtils.getFile("target/Informe.jrxml").getAbsolutePath()),
-							empParams, 
-							new JRBeanCollectionDataSource(listaEstudiantes)
-					);
-		
-			
+					JasperCompileManager.compileReport(ResourceUtils.getFile("db/Prueba_A4.jrxml").getAbsolutePath()),
+					empParams, new JRBeanCollectionDataSource(lista));
+
 			JRPdfExporter exporter = new JRPdfExporter();
-	
+
 			exporter.setExporterInput(new SimpleExporterInput(empReport));
-			exporter.setExporterOutput(
-			  new SimpleOutputStreamExporterOutput(nombreFichero));
-	
-			SimplePdfReportConfiguration reportConfig
-			  = new SimplePdfReportConfiguration();
+			exporter.setExporterOutput(new SimpleOutputStreamExporterOutput(path + nombreFichero));
+
+			SimplePdfReportConfiguration reportConfig = new SimplePdfReportConfiguration();
 			reportConfig.setSizePageToContent(true);
 			reportConfig.setForceLineBreakPolicy(false);
-	
-			SimplePdfExporterConfiguration exportConfig
-			  = new SimplePdfExporterConfiguration();
-			exportConfig.setMetadataAuthor("Cesur Formaciones");
+
+			SimplePdfExporterConfiguration exportConfig = new SimplePdfExporterConfiguration();
+			exportConfig.setMetadataAuthor("David Dominguez");
 			exportConfig.setEncrypted(true);
 			exportConfig.setAllowedPermissionsHint("PRINTING");
-	
+
 			exporter.setConfiguration(reportConfig);
 			exporter.setConfiguration(exportConfig);
-	
+
 			exporter.exportReport();
 		} catch (FileNotFoundException e) {
 			e.printStackTrace();
 		} catch (JRException e) {
 			e.printStackTrace();
 		}
-		
-		return true; 
+
+		return true;
 	}
 }

@@ -13,7 +13,7 @@ import jakarta.xml.bind.annotation.XmlTransient;
 
 @XmlRootElement(name = "pregunta")
 public class PreguntaTest {
-	
+
 	@Id
 	@XmlAttribute(name = "identificador")
 	protected int identificador;
@@ -25,7 +25,6 @@ public class PreguntaTest {
 	@XmlElement(name = "respuesta")
 	public List<RespuestaTest> respuestaTest = new ArrayList<>();
 
-	
 	@XmlTransient
 	public int getIdentificador() {
 		return identificador;
@@ -55,6 +54,7 @@ public class PreguntaTest {
 		respuestaTest.add(respuesta);
 
 	}
+
 	@XmlTransient
 	public List<RespuestaTest> getRespuestaTest() {
 		return respuestaTest;
@@ -70,8 +70,9 @@ public class PreguntaTest {
 	 */
 
 	public PreguntaTest() {
-		
+
 	}
+
 	public PreguntaTest(int identificador, String pregunta, boolean esMultiple) {
 		super();
 		this.identificador = identificador;

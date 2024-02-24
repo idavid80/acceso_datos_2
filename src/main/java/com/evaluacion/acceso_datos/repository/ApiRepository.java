@@ -4,19 +4,15 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.net.HttpURLConnection;
 import java.net.URL;
-import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
-import org.xmldb.api.base.Collection;
 
 import com.evaluacion.acceso_datos.entities.Alumno;
 import com.evaluacion.acceso_datos.entities.Pregunta;
 import com.evaluacion.acceso_datos.entities.Respuesta;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.mongodb.client.MongoDatabase;
 
 @Repository
 public class ApiRepository {

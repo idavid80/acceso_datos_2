@@ -11,8 +11,8 @@ import org.springframework.stereotype.Service;
 import com.evaluacion.acceso_datos.collection.Curso;
 import com.evaluacion.acceso_datos.collection.Estudiante;
 import com.evaluacion.acceso_datos.entities.Alumno;
-import com.evaluacion.acceso_datos.repository.EstudianteRepository;
 import com.evaluacion.acceso_datos.repository.mongoDB.CursoRepository;
+import com.evaluacion.acceso_datos.repository.mongoDB.EstudianteRepository;
 
 @Service
 public class ServiceMongoDBImpl implements ServiceMongoDB {
@@ -59,7 +59,7 @@ public class ServiceMongoDBImpl implements ServiceMongoDB {
 		List<Curso> listaCursos = new ArrayList<>();
 		Curso curso = new Curso();
 		List<String> listaAsignatura = new ArrayList<>();
-		// int id = 0;
+	
 		// Mapeamos el hashMap
 		for (Map.Entry<String, List<String>> entry : hashMap.entrySet()) {
 			curso = new Curso();
@@ -76,33 +76,33 @@ public class ServiceMongoDBImpl implements ServiceMongoDB {
 			// curso.setIdCurso(id);
 			listaCursos.add(curso);
 			cursoRepo.save(curso);
-			// id++;
+
 		}
 
 		return listaCursos;
 
 	}
-	
+
 	public Curso getCurso(String id_curso) {
 		// Inicializamos Clases
 		Curso curso = new Curso();
 		// Obtenemos la clase curso con el id_curso
 		Optional<Curso> cursoDB = cursoRepo.findById(id_curso);
-		
+
 		// obtenemos datos del curso
 		curso.setIdCurso(cursoDB.get().getIdCurso());
 		curso.setAsignaturas(cursoDB.get().getAsignaturas());
 		curso.setNombreCurso(cursoDB.get().getNombreCurso());
 
 		return curso;
-		
+
 	}
 
 	public Curso getCursoByEstudiante(String id_estudiante) {
-		
+
 		// Obtenemos el estudiante por id de la BBDD
 		Optional<Estudiante> estudiante = estudianteRepo.findById(id_estudiante);
-		
+
 		// Obtenemos el id del curso de dicho estudiante
 		String id_curso = estudiante.get().getIdCurso();
 
@@ -111,21 +111,21 @@ public class ServiceMongoDBImpl implements ServiceMongoDB {
 	}
 
 	public Estudiante getAsignaturaEstudiante(String id_estudiante) {
-		
+
 		// Inicializamos clases
 		Estudiante estudiante = new Estudiante();
 		Curso curso = new Curso();
-		
+
 		// Obtenemos el estudiante por id de la BBDD
 		Optional<Estudiante> estudianteDB = estudianteRepo.findById(id_estudiante);
-		
+
 		// insertamos los datos del estudiante
 		estudiante.setIdEstudiante(id_estudiante);
 		estudiante.setNombre(estudianteDB.get().getNombre());
 
 		String id_curso = estudianteDB.get().getIdCurso();
 		estudiante.setIdCurso(id_curso);
-		
+
 		curso = getCurso(id_curso);
 
 		estudiante.setCurso(curso);

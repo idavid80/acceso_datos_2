@@ -1,4 +1,4 @@
-package com.evaluacion.acceso_datos.repository;
+package com.evaluacion.acceso_datos.repository.mongoDB;
 /*
 import org.springframework.data.mongodb.repository.MongoRepository;
 import org.springframework.stereotype.Repository;

@@ -36,9 +36,10 @@ public class ControllerMongoDB {
 
 	@ResponseBody
 	@PutMapping("/crear-estudiante")
-	public List<Estudiante> crearEstudiante() {
+	public String crearEstudiante() {
 		List<Alumno> listaAlumnos = objectAlumno.mostrarAlumno();
-		return service.crearEstudiante(listaAlumnos);
+		service.crearEstudiante(listaAlumnos);
+		return "Lista de estudiantes creada con éxito";
 	}
 
 	@ResponseBody

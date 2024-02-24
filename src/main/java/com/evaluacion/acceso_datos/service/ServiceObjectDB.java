@@ -24,8 +24,5 @@ public interface ServiceObjectDB {
 	Alumno insertarAlumno(String nombre, String curso);
 
 	List<Alumno> mostrarAlumno();
-	
-	List<String> mostrarAsignaturas();
 
-	
 }

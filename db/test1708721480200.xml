@@ -1,0 +1,1477 @@
+<documento>
+	<pregunta es_multiple="false" id_pregunta="1">
+		<texto>¿Qué tipo de trama de administración puede emitir regularmente un
+			AP?</texto>
+		<respuesta id_pregunta="1">
+			<opcion>autenticación</opcion>
+			<es_correcta>false</es_correcta>
+		</respuesta>
+		<respuesta id_pregunta="1">
+			<opcion>solicitud de sondeo</opcion>
+			<es_correcta>false</es_correcta>
+		</respuesta>
+		<respuesta id_pregunta="1">
+			<opcion>beacon</opcion>
+			<es_correcta>true</es_correcta>
+		</respuesta>
+		<respuesta id_pregunta="1">
+			<opcion>respuesta de sondeo</opcion>
+			<es_correcta>false</es_correcta>
+		</respuesta>
+	</pregunta>
+	<pregunta es_multiple="false" id_pregunta="2">
+		<texto>Un técnico está configurando el canal en un router inalámbrico en
+			1, 6 u 11. ¿Cuál es el propósito de ajustar el canal?</texto>
+		<respuesta id_pregunta="2">
+			<opcion>Para evitar interferencias de dispositivos inalámbricos
+				cercanos</opcion>
+			<es_correcta>true</es_correcta>
+		</respuesta>
+		<respuesta id_pregunta="2">
+			<opcion>Para proporcionar modos de seguridad más fuertes</opcion>
+			<es_correcta>false</es_correcta>
+		</respuesta>
+		<respuesta id_pregunta="2">
+			<opcion>Para habilitar diferentes estándares 802.11</opcion>
+			<es_correcta>false</es_correcta>
+		</respuesta>
+		<respuesta id_pregunta="2">
+			<opcion>Para deshabilitar la transmisión del SSID</opcion>
+			<es_correcta>false</es_correcta>
+		</respuesta>
+	</pregunta>
+	<pregunta es_multiple="true" id_pregunta="3">
+		<texto>¿Qué tipo de red inalámbrica utiliza transmisores de baja
+			potencia para una red de corto alcance, generalmente de 20 a 30 pies
+			(6 a 9 metros)?</texto>
+		<respuesta id_pregunta="3">
+			<opcion>Red inalámbrica de área metropolitana</opcion>
+			<es_correcta>false</es_correcta>
+		</respuesta>
+		<respuesta id_pregunta="3">
+			<opcion>Red de área personal inalámbrica</opcion>
+			<es_correcta>true</es_correcta>
+		</respuesta>
+		<respuesta id_pregunta="3">
+			<opcion>Red inalámbrica local</opcion>
+			<es_correcta>true</es_correcta>
+		</respuesta>
+		<respuesta id_pregunta="3">
+			<opcion>Red de área amplia inalámbrica</opcion>
+			<es_correcta>false</es_correcta>
+		</respuesta>
+	</pregunta>
+	<pregunta es_multiple="false" id_pregunta="4">
+		<texto>Un administrador de red de una universidad está configurando el
+			proceso de autenticación de usuario de WLAN. Los usuarios
+			inalámbricos deben ingresar credenciales de nombre de usuario y
+			contraseña que serán verificadas por un servidor. ¿Qué servidor
+			proporcionaría dicho servicio?</texto>
+		<respuesta id_pregunta="4">
+			<opcion>SNMP</opcion>
+			<es_correcta>false</es_correcta>
+		</respuesta>
+		<respuesta id_pregunta="4">
+			<opcion>AAA</opcion>
+			<es_correcta>false</es_correcta>
+		</respuesta>
+		<respuesta id_pregunta="4">
+			<opcion>RADIUS</opcion>
+			<es_correcta>true</es_correcta>
+		</respuesta>
+		<respuesta id_pregunta="4">
+			<opcion>NAT</opcion>
+			<es_correcta>false</es_correcta>
+		</respuesta>
+	</pregunta>
+	<pregunta es_multiple="false" id_pregunta="5">
+		<texto>Un administrador de red ingresa los siguientes comandos en el
+			switch SW1. SW1(config)# interface range fa0/5 – 10; SW1(config-if)#
+			ip dhcp snooping limit rate 6. ¿Cuál es el efecto después de
+			ingresar estos comandos?</texto>
+		<respuesta id_pregunta="5">
+			<opcion>Si alguno de los puertos FastEthernet del 5 al 10 recibe más
+				de 6 mensajes DHCP por segundo, el puerto seguirá funcionando y
+				se enviará un mensaje de error al administrador de la red.</opcion>
+			<es_correcta>false</es_correcta>
+		</respuesta>
+		<respuesta id_pregunta="5">
+			<opcion>Los puertos FastEthernet del 5 a 10 pueden recibir hasta 6
+				mensajes DHCP por segundo de cualquier tipo.</opcion>
+			<es_correcta>false</es_correcta>
+		</respuesta>
+		<respuesta id_pregunta="5">
+			<opcion>Los puertos FastEthernet 5 a 10 pueden recibir hasta 6
+				mensajes de descubrimiento DHCP por segundo.</opcion>
+			<es_correcta>true</es_correcta>
+		</respuesta>
+		<respuesta id_pregunta="5">
+			<opcion>Si alguno de los puertos FastEthernet 5 al 10 recibe más de
+				6 mensajes DHCP por segundo, el puerto se cerrará.</opcion>
+			<es_correcta>false</es_correcta>
+		</respuesta>
+	</pregunta>
+	<pregunta es_multiple="false" id_pregunta="6">
+		<texto>Consulte la exposición. El puerto Fa0/2 ya se ha configurado
+			correctamente. El teléfono IP y la PC funcionan correctamente. ¿Qué
+			configuración de switch sería la más apropiada para el puerto Fa0/2
+			si el administrador de red tiene los siguientes objetivos? Nadie
+			puede desconectar el teléfono IP o la PC y conectar algún otro
+			dispositivo cableado. Si se conecta un dispositivo diferente, el
+			puerto Fa0/2 se cierra. El switch debe detectar automáticamente la
+			dirección MAC del teléfono IP y la PC y agregar esas direcciones a
+			la configuración en ejecución.</texto>
+		<respuesta id_pregunta="6">
+			<opcion>SWA(config-if)# switchport port-security;SWA(config-if)#
+				switchport port-security maximum 2;SWA(config-if)# switchport
+				port-security mac-address sticky;SWA(config-if)# switchport
+				port-security violation restrict</opcion>
+			<es_correcta>false</es_correcta>
+		</respuesta>
+		<respuesta id_pregunta="6">
+			<opcion>SWA(config-if)# switchport port-security;SWA(config-if)#
+				switchport port-security maximum 2;SWA(config-if)# switchport
+				port-security mac-address sticky</opcion>
+			<es_correcta>false</es_correcta>
+		</respuesta>
+		<respuesta id_pregunta="6">
+			<opcion>SWA(config-if)# switchport port-security;SWA(config-if)#
+				switchport port-security mac-address sticky</opcion>
+			<es_correcta>true</es_correcta>
+		</respuesta>
+		<respuesta id_pregunta="6">
+			<opcion>SWA(config-if)# switchport port-security mac-address
+				sticky;SWA(config-if)# switchport port-security maximum 2</opcion>
+			<es_correcta>false</es_correcta>
+		</respuesta>
+	</pregunta>
+	<pregunta es_multiple="false" id_pregunta="7">
+		<texto>¿Cuál es la función que proporciona el protocolo CAPWAP en una
+			red inalámbrica corporativa?</texto>
+		<respuesta id_pregunta="7">
+			<opcion>CAPWAP proporciona la encapsulación y el reenvío del tráfico
+				de usuarios inalámbricos entre un punto de acceso y un
+				controlador de LAN inalámbrica.</opcion>
+			<es_correcta>true</es_correcta>
+		</respuesta>
+		<respuesta id_pregunta="7">
+			<opcion>CAPWAP proporciona el cifrado del tráfico de usuarios
+				inalámbricos entre un punto de acceso y un cliente inalámbrico.</opcion>
+			<es_correcta>false</es_correcta>
+		</respuesta>
+		<respuesta id_pregunta="7">
+			<opcion>CAPWAP proporciona conectividad entre un punto de acceso que
+				usa direcciones IPv6 y un cliente inalámbrico que usa
+				direcciones IPv4.</opcion>
+			<es_correcta>false</es_correcta>
+		</respuesta>
+		<respuesta id_pregunta="7">
+			<opcion>CAPWAP crea un túnel en los puertos del Protocolo de control
+				de transmisión (TCP) para permitir que un WLC configure un punto
+				de acceso autónomo.</opcion>
+			<es_correcta>false</es_correcta>
+		</respuesta>
+	</pregunta>
+	<pregunta es_multiple="false" id_pregunta="8">
+		<texto>¿Qué función o configuración de un switch lo hace vulnerable a
+			los ataques de etiquetado doble de VLAN?</texto>
+		<respuesta id_pregunta="8">
+			<opcion>Modo dúplex mixto habilitado para todos los puertos de forma
+				predeterminada.</opcion>
+			<es_correcta>false</es_correcta>
+		</respuesta>
+		<respuesta id_pregunta="8">
+			<opcion>La VLAN nativa del puerto troncal es la misma que la VLAN de
+				un usuario.</opcion>
+			<es_correcta>true</es_correcta>
+		</respuesta>
+		<respuesta id_pregunta="8">
+			<opcion>La función de puerto de enlace troncal automático habilitada
+				para todos los puertos de forma predeterminada.</opcion>
+			<es_correcta>false</es_correcta>
+		</respuesta>
+		<respuesta id_pregunta="8">
+			<opcion>El tamaño limitado del espacio de memoria direccionable por
+				contenido.</opcion>
+			<es_correcta>false</es_correcta>
+		</respuesta>
+	</pregunta>
+	<pregunta es_multiple="false" id_pregunta="9">
+		<texto>¿Qué protocolo se debe utilizar para mitigar la vulnerabilidad de
+			usar Telnet para administrar dispositivos de red de forma remota?</texto>
+		<respuesta id_pregunta="9">
+			<opcion>TFTP</opcion>
+			<es_correcta>false</es_correcta>
+		</respuesta>
+		<respuesta id_pregunta="9">
+			<opcion>SSH</opcion>
+			<es_correcta>true</es_correcta>
+		</respuesta>
+		<respuesta id_pregunta="9">
+			<opcion>SNMP</opcion>
+			<es_correcta>false</es_correcta>
+		</respuesta>
+		<respuesta id_pregunta="9">
+			<opcion>SCP</opcion>
+			<es_correcta>false</es_correcta>
+		</respuesta>
+	</pregunta>
+	<pregunta es_multiple="false" id_pregunta="10">
+		<texto>Consulte la exposición. La PC1 y la PC2 deberían poder obtener
+			asignaciones de direcciones IP del servidor DHCP. ¿Cuántos puertos
+			entre los switchs deben asignarse como puertos de confianza como
+			parte de la configuración de inspección DHCP?</texto>
+		<respuesta id_pregunta="10">
+			<opcion>7</opcion>
+			<es_correcta>true</es_correcta>
+		</respuesta>
+		<respuesta id_pregunta="10">
+			<opcion>3</opcion>
+			<es_correcta>false</es_correcta>
+		</respuesta>
+		<respuesta id_pregunta="10">
+			<opcion>5</opcion>
+			<es_correcta>false</es_correcta>
+		</respuesta>
+		<respuesta id_pregunta="10">
+			<opcion>1</opcion>
+			<es_correcta>false</es_correcta>
+		</respuesta>
+	</pregunta>
+	<pregunta es_multiple="false" id_pregunta="11">
+		<texto>¿Qué componente, implementación o protocolo de control de acceso
+			recopila e informa datos de uso?</texto>
+		<respuesta id_pregunta="11">
+			<opcion>autorización</opcion>
+			<es_correcta>false</es_correcta>
+		</respuesta>
+		<respuesta id_pregunta="11">
+			<opcion>802.1x</opcion>
+			<es_correcta>false</es_correcta>
+		</respuesta>
+		<respuesta id_pregunta="11">
+			<opcion>autenticación</opcion>
+			<es_correcta>false</es_correcta>
+		</respuesta>
+		<respuesta id_pregunta="11">
+			<opcion>contabilidad</opcion>
+			<es_correcta>true</es_correcta>
+		</respuesta>
+	</pregunta>
+	<pregunta es_multiple="true" id_pregunta="12">
+		<texto>Un técnico está solucionando problemas de una WLAN lenta y decide
+			utilizar el enfoque de dividir el tráfico. ¿Qué dos parámetros
+			tendrían que configurarse para hacer esto? (Elija dos.) Por favor,
+			selecciona 2 respuestas correctas</texto>
+		<respuesta id_pregunta="12">
+			<opcion>Configure un SSID común para ambas redes divididas.</opcion>
+			<es_correcta>false</es_correcta>
+		</respuesta>
+		<respuesta id_pregunta="12">
+			<opcion>Configure el modo de seguridad en WPA Personal TKIP/AES para
+				ambas redes.</opcion>
+			<es_correcta>false</es_correcta>
+		</respuesta>
+		<respuesta id_pregunta="12">
+			<opcion>Configure la banda de 5 GHz para transmitir multimedia y
+				tráfico sensible al tiempo.</opcion>
+			<es_correcta>true</es_correcta>
+		</respuesta>
+		<respuesta id_pregunta="12">
+			<opcion>Configure el modo de seguridad en WPA Personal TKIP/AES para
+				una red y WPA2 Personal AES para la otra red.</opcion>
+			<es_correcta>false</es_correcta>
+		</respuesta>
+		<respuesta id_pregunta="12">
+			<opcion>Configure la banda de 2,4 GHz para el tráfico de Internet
+				básico que no es urgente.</opcion>
+			<es_correcta>true</es_correcta>
+		</respuesta>
+	</pregunta>
+	<pregunta es_multiple="true" id_pregunta="13">
+		<texto>Un técnico está solucionando problemas de una WLAN lenta y decide
+			utilizar el enfoque de dividir el tráfico. ¿Qué dos parámetros
+			tendrían que configurarse para hacer esto? (Elija dos.) Por favor,
+			selecciona 2 respuestas correctas</texto>
+		<respuesta id_pregunta="13">
+			<opcion>Configure un SSID común para ambas redes divididas.</opcion>
+			<es_correcta>false</es_correcta>
+		</respuesta>
+		<respuesta id_pregunta="13">
+			<opcion>Configure el modo de seguridad en WPA Personal TKIP/AES para
+				ambas redes.</opcion>
+			<es_correcta>false</es_correcta>
+		</respuesta>
+		<respuesta id_pregunta="13">
+			<opcion>Configure la banda de 5 GHz para transmitir multimedia y
+				tráfico sensible al tiempo.</opcion>
+			<es_correcta>true</es_correcta>
+		</respuesta>
+		<respuesta id_pregunta="13">
+			<opcion>Configure el modo de seguridad en WPA Personal TKIP/AES para
+				una red y WPA2 Personal AES para la otra red.</opcion>
+			<es_correcta>false</es_correcta>
+		</respuesta>
+		<respuesta id_pregunta="13">
+			<opcion>Configure la banda de 2,4 GHz para el tráfico de Internet
+				básico que no es urgente.</opcion>
+			<es_correcta>true</es_correcta>
+		</respuesta>
+	</pregunta>
+	<pregunta es_multiple="true" id_pregunta="14">
+		<texto>Un técnico está solucionando problemas de una WLAN lenta y decide
+			utilizar el enfoque de dividir el tráfico. ¿Qué dos parámetros
+			tendrían que configurarse para hacer esto? (Elija dos.) Por favor,
+			selecciona 2 respuestas correctas</texto>
+		<respuesta id_pregunta="14">
+			<opcion>Configure un SSID común para ambas redes divididas.</opcion>
+			<es_correcta>false</es_correcta>
+		</respuesta>
+		<respuesta id_pregunta="14">
+			<opcion>Configure el modo de seguridad en WPA Personal TKIP/AES para
+				ambas redes.</opcion>
+			<es_correcta>false</es_correcta>
+		</respuesta>
+		<respuesta id_pregunta="14">
+			<opcion>Configure la banda de 5 GHz para transmitir multimedia y
+				tráfico sensible al tiempo.</opcion>
+			<es_correcta>true</es_correcta>
+		</respuesta>
+		<respuesta id_pregunta="14">
+			<opcion>Configure el modo de seguridad en WPA Personal TKIP/AES para
+				una red y WPA2 Personal AES para la otra red.</opcion>
+			<es_correcta>false</es_correcta>
+		</respuesta>
+		<respuesta id_pregunta="14">
+			<opcion>Configure la banda de 2,4 GHz para el tráfico de Internet
+				básico que no es urgente.</opcion>
+			<es_correcta>true</es_correcta>
+		</respuesta>
+	</pregunta>
+	<pregunta es_multiple="true" id_pregunta="15">
+		<texto>Un técnico está solucionando problemas de una WLAN lenta y decide
+			utilizar el enfoque de dividir el tráfico. ¿Qué dos parámetros
+			tendrían que configurarse para hacer esto? (Elija dos.) Por favor,
+			selecciona 2 respuestas correctas</texto>
+		<respuesta id_pregunta="15">
+			<opcion>Configure un SSID común para ambas redes divididas.</opcion>
+			<es_correcta>false</es_correcta>
+		</respuesta>
+		<respuesta id_pregunta="15">
+			<opcion>Configure el modo de seguridad en WPA Personal TKIP/AES para
+				ambas redes.</opcion>
+			<es_correcta>false</es_correcta>
+		</respuesta>
+		<respuesta id_pregunta="15">
+			<opcion>Configure la banda de 5 GHz para transmitir multimedia y
+				tráfico sensible al tiempo.</opcion>
+			<es_correcta>true</es_correcta>
+		</respuesta>
+		<respuesta id_pregunta="15">
+			<opcion>Configure el modo de seguridad en WPA Personal TKIP/AES para
+				una red y WPA2 Personal AES para la otra red.</opcion>
+			<es_correcta>false</es_correcta>
+		</respuesta>
+		<respuesta id_pregunta="15">
+			<opcion>Configure la banda de 2,4 GHz para el tráfico de Internet
+				básico que no es urgente.</opcion>
+			<es_correcta>true</es_correcta>
+		</respuesta>
+	</pregunta>
+	<pregunta es_multiple="true" id_pregunta="16">
+		<texto>Un técnico está solucionando problemas de una WLAN lenta y decide
+			utilizar el enfoque de dividir el tráfico. ¿Qué dos parámetros
+			tendrían que configurarse para hacer esto? (Elija dos.) Por favor,
+			selecciona 2 respuestas correctas</texto>
+		<respuesta id_pregunta="16">
+			<opcion>Configure un SSID común para ambas redes divididas.</opcion>
+			<es_correcta>false</es_correcta>
+		</respuesta>
+		<respuesta id_pregunta="16">
+			<opcion>Configure el modo de seguridad en WPA Personal TKIP/AES para
+				ambas redes.</opcion>
+			<es_correcta>false</es_correcta>
+		</respuesta>
+		<respuesta id_pregunta="16">
+			<opcion>Configure la banda de 5 GHz para transmitir multimedia y
+				tráfico sensible al tiempo.</opcion>
+			<es_correcta>true</es_correcta>
+		</respuesta>
+		<respuesta id_pregunta="16">
+			<opcion>Configure el modo de seguridad en WPA Personal TKIP/AES para
+				una red y WPA2 Personal AES para la otra red.</opcion>
+			<es_correcta>false</es_correcta>
+		</respuesta>
+		<respuesta id_pregunta="16">
+			<opcion>Configure la banda de 2,4 GHz para el tráfico de Internet
+				básico que no es urgente.</opcion>
+			<es_correcta>true</es_correcta>
+		</respuesta>
+	</pregunta>
+	<pregunta es_multiple="true" id_pregunta="17">
+		<texto>Un técnico está solucionando problemas de una WLAN lenta y decide
+			utilizar el enfoque de dividir el tráfico. ¿Qué dos parámetros
+			tendrían que configurarse para hacer esto? (Elija dos.) Por favor,
+			selecciona 2 respuestas correctas</texto>
+		<respuesta id_pregunta="17">
+			<opcion>Configure un SSID común para ambas redes divididas.</opcion>
+			<es_correcta>false</es_correcta>
+		</respuesta>
+		<respuesta id_pregunta="17">
+			<opcion>Configure el modo de seguridad en WPA Personal TKIP/AES para
+				ambas redes.</opcion>
+			<es_correcta>false</es_correcta>
+		</respuesta>
+		<respuesta id_pregunta="17">
+			<opcion>Configure la banda de 5 GHz para transmitir multimedia y
+				tráfico sensible al tiempo.</opcion>
+			<es_correcta>true</es_correcta>
+		</respuesta>
+		<respuesta id_pregunta="17">
+			<opcion>Configure el modo de seguridad en WPA Personal TKIP/AES para
+				una red y WPA2 Personal AES para la otra red.</opcion>
+			<es_correcta>false</es_correcta>
+		</respuesta>
+		<respuesta id_pregunta="17">
+			<opcion>Configure la banda de 2,4 GHz para el tráfico de Internet
+				básico que no es urgente.</opcion>
+			<es_correcta>true</es_correcta>
+		</respuesta>
+	</pregunta>
+	<pregunta es_multiple="false" id_pregunta="18">
+		<texto>¿Qué componente, implementación o protocolo de control de acceso
+			recopila e informa datos de uso?</texto>
+		<respuesta id_pregunta="18">
+			<opcion>autorización</opcion>
+			<es_correcta>false</es_correcta>
+		</respuesta>
+		<respuesta id_pregunta="18">
+			<opcion>802.1x</opcion>
+			<es_correcta>false</es_correcta>
+		</respuesta>
+		<respuesta id_pregunta="18">
+			<opcion>autenticación</opcion>
+			<es_correcta>false</es_correcta>
+		</respuesta>
+		<respuesta id_pregunta="18">
+			<opcion>contabilidad</opcion>
+			<es_correcta>true</es_correcta>
+		</respuesta>
+	</pregunta>
+	<pregunta es_multiple="false" id_pregunta="19">
+		<texto>¿Qué componente, implementación o protocolo de control de acceso
+			recopila e informa datos de uso?</texto>
+		<respuesta id_pregunta="19">
+			<opcion>autorización</opcion>
+			<es_correcta>false</es_correcta>
+		</respuesta>
+		<respuesta id_pregunta="19">
+			<opcion>802.1x</opcion>
+			<es_correcta>false</es_correcta>
+		</respuesta>
+		<respuesta id_pregunta="19">
+			<opcion>autenticación</opcion>
+			<es_correcta>false</es_correcta>
+		</respuesta>
+		<respuesta id_pregunta="19">
+			<opcion>contabilidad</opcion>
+			<es_correcta>true</es_correcta>
+		</respuesta>
+	</pregunta>
+	<pregunta es_multiple="false" id_pregunta="20">
+		<texto>¿Qué componente, implementación o protocolo de control de acceso
+			recopila e informa datos de uso?</texto>
+		<respuesta id_pregunta="20">
+			<opcion>autorización</opcion>
+			<es_correcta>false</es_correcta>
+		</respuesta>
+		<respuesta id_pregunta="20">
+			<opcion>802.1x</opcion>
+			<es_correcta>false</es_correcta>
+		</respuesta>
+		<respuesta id_pregunta="20">
+			<opcion>autenticación</opcion>
+			<es_correcta>false</es_correcta>
+		</respuesta>
+		<respuesta id_pregunta="20">
+			<opcion>contabilidad</opcion>
+			<es_correcta>true</es_correcta>
+		</respuesta>
+	</pregunta>
+	<pregunta es_multiple="false" id_pregunta="21">
+		<texto>¿Qué componente, implementación o protocolo de control de acceso
+			recopila e informa datos de uso?</texto>
+		<respuesta id_pregunta="21">
+			<opcion>autorización</opcion>
+			<es_correcta>false</es_correcta>
+		</respuesta>
+		<respuesta id_pregunta="21">
+			<opcion>802.1x</opcion>
+			<es_correcta>false</es_correcta>
+		</respuesta>
+		<respuesta id_pregunta="21">
+			<opcion>autenticación</opcion>
+			<es_correcta>false</es_correcta>
+		</respuesta>
+		<respuesta id_pregunta="21">
+			<opcion>contabilidad</opcion>
+			<es_correcta>true</es_correcta>
+		</respuesta>
+	</pregunta>
+	<pregunta es_multiple="false" id_pregunta="22">
+		<texto>Consulte la exposición. La PC1 y la PC2 deberían poder obtener
+			asignaciones de direcciones IP del servidor DHCP. ¿Cuántos puertos
+			entre los switchs deben asignarse como puertos de confianza como
+			parte de la configuración de inspección DHCP?</texto>
+		<respuesta id_pregunta="22">
+			<opcion>7</opcion>
+			<es_correcta>true</es_correcta>
+		</respuesta>
+		<respuesta id_pregunta="22">
+			<opcion>3</opcion>
+			<es_correcta>false</es_correcta>
+		</respuesta>
+		<respuesta id_pregunta="22">
+			<opcion>5</opcion>
+			<es_correcta>false</es_correcta>
+		</respuesta>
+		<respuesta id_pregunta="22">
+			<opcion>1</opcion>
+			<es_correcta>false</es_correcta>
+		</respuesta>
+	</pregunta>
+	<pregunta es_multiple="false" id_pregunta="23">
+		<texto>Consulte la exposición. La PC1 y la PC2 deberían poder obtener
+			asignaciones de direcciones IP del servidor DHCP. ¿Cuántos puertos
+			entre los switchs deben asignarse como puertos de confianza como
+			parte de la configuración de inspección DHCP?</texto>
+		<respuesta id_pregunta="23">
+			<opcion>7</opcion>
+			<es_correcta>true</es_correcta>
+		</respuesta>
+		<respuesta id_pregunta="23">
+			<opcion>3</opcion>
+			<es_correcta>false</es_correcta>
+		</respuesta>
+		<respuesta id_pregunta="23">
+			<opcion>5</opcion>
+			<es_correcta>false</es_correcta>
+		</respuesta>
+		<respuesta id_pregunta="23">
+			<opcion>1</opcion>
+			<es_correcta>false</es_correcta>
+		</respuesta>
+	</pregunta>
+	<pregunta es_multiple="false" id_pregunta="24">
+		<texto>Consulte la exposición. La PC1 y la PC2 deberían poder obtener
+			asignaciones de direcciones IP del servidor DHCP. ¿Cuántos puertos
+			entre los switchs deben asignarse como puertos de confianza como
+			parte de la configuración de inspección DHCP?</texto>
+		<respuesta id_pregunta="24">
+			<opcion>7</opcion>
+			<es_correcta>true</es_correcta>
+		</respuesta>
+		<respuesta id_pregunta="24">
+			<opcion>3</opcion>
+			<es_correcta>false</es_correcta>
+		</respuesta>
+		<respuesta id_pregunta="24">
+			<opcion>5</opcion>
+			<es_correcta>false</es_correcta>
+		</respuesta>
+		<respuesta id_pregunta="24">
+			<opcion>1</opcion>
+			<es_correcta>false</es_correcta>
+		</respuesta>
+	</pregunta>
+	<pregunta es_multiple="false" id_pregunta="25">
+		<texto>Consulte la exposición. La PC1 y la PC2 deberían poder obtener
+			asignaciones de direcciones IP del servidor DHCP. ¿Cuántos puertos
+			entre los switchs deben asignarse como puertos de confianza como
+			parte de la configuración de inspección DHCP?</texto>
+		<respuesta id_pregunta="25">
+			<opcion>7</opcion>
+			<es_correcta>true</es_correcta>
+		</respuesta>
+		<respuesta id_pregunta="25">
+			<opcion>3</opcion>
+			<es_correcta>false</es_correcta>
+		</respuesta>
+		<respuesta id_pregunta="25">
+			<opcion>5</opcion>
+			<es_correcta>false</es_correcta>
+		</respuesta>
+		<respuesta id_pregunta="25">
+			<opcion>1</opcion>
+			<es_correcta>false</es_correcta>
+		</respuesta>
+	</pregunta>
+	<pregunta es_multiple="false" id_pregunta="26">
+		<texto>¿Qué protocolo se debe utilizar para mitigar la vulnerabilidad de
+			usar Telnet para administrar dispositivos de red de forma remota?</texto>
+		<respuesta id_pregunta="26">
+			<opcion>TFTP</opcion>
+			<es_correcta>false</es_correcta>
+		</respuesta>
+		<respuesta id_pregunta="26">
+			<opcion>SSH</opcion>
+			<es_correcta>true</es_correcta>
+		</respuesta>
+		<respuesta id_pregunta="26">
+			<opcion>SNMP</opcion>
+			<es_correcta>false</es_correcta>
+		</respuesta>
+		<respuesta id_pregunta="26">
+			<opcion>SCP</opcion>
+			<es_correcta>false</es_correcta>
+		</respuesta>
+	</pregunta>
+	<pregunta es_multiple="false" id_pregunta="27">
+		<texto>¿Qué protocolo se debe utilizar para mitigar la vulnerabilidad de
+			usar Telnet para administrar dispositivos de red de forma remota?</texto>
+		<respuesta id_pregunta="27">
+			<opcion>TFTP</opcion>
+			<es_correcta>false</es_correcta>
+		</respuesta>
+		<respuesta id_pregunta="27">
+			<opcion>SSH</opcion>
+			<es_correcta>true</es_correcta>
+		</respuesta>
+		<respuesta id_pregunta="27">
+			<opcion>SNMP</opcion>
+			<es_correcta>false</es_correcta>
+		</respuesta>
+		<respuesta id_pregunta="27">
+			<opcion>SCP</opcion>
+			<es_correcta>false</es_correcta>
+		</respuesta>
+	</pregunta>
+	<pregunta es_multiple="false" id_pregunta="28">
+		<texto>¿Qué protocolo se debe utilizar para mitigar la vulnerabilidad de
+			usar Telnet para administrar dispositivos de red de forma remota?</texto>
+		<respuesta id_pregunta="28">
+			<opcion>TFTP</opcion>
+			<es_correcta>false</es_correcta>
+		</respuesta>
+		<respuesta id_pregunta="28">
+			<opcion>SSH</opcion>
+			<es_correcta>true</es_correcta>
+		</respuesta>
+		<respuesta id_pregunta="28">
+			<opcion>SNMP</opcion>
+			<es_correcta>false</es_correcta>
+		</respuesta>
+		<respuesta id_pregunta="28">
+			<opcion>SCP</opcion>
+			<es_correcta>false</es_correcta>
+		</respuesta>
+	</pregunta>
+	<pregunta es_multiple="false" id_pregunta="29">
+		<texto>¿Qué protocolo se debe utilizar para mitigar la vulnerabilidad de
+			usar Telnet para administrar dispositivos de red de forma remota?</texto>
+		<respuesta id_pregunta="29">
+			<opcion>TFTP</opcion>
+			<es_correcta>false</es_correcta>
+		</respuesta>
+		<respuesta id_pregunta="29">
+			<opcion>SSH</opcion>
+			<es_correcta>true</es_correcta>
+		</respuesta>
+		<respuesta id_pregunta="29">
+			<opcion>SNMP</opcion>
+			<es_correcta>false</es_correcta>
+		</respuesta>
+		<respuesta id_pregunta="29">
+			<opcion>SCP</opcion>
+			<es_correcta>false</es_correcta>
+		</respuesta>
+	</pregunta>
+	<pregunta es_multiple="false" id_pregunta="30">
+		<texto>¿Qué función o configuración de un switch lo hace vulnerable a
+			los ataques de etiquetado doble de VLAN?</texto>
+		<respuesta id_pregunta="30">
+			<opcion>Modo dúplex mixto habilitado para todos los puertos de forma
+				predeterminada.</opcion>
+			<es_correcta>false</es_correcta>
+		</respuesta>
+		<respuesta id_pregunta="30">
+			<opcion>La VLAN nativa del puerto troncal es la misma que la VLAN de
+				un usuario.</opcion>
+			<es_correcta>true</es_correcta>
+		</respuesta>
+		<respuesta id_pregunta="30">
+			<opcion>La función de puerto de enlace troncal automático habilitada
+				para todos los puertos de forma predeterminada.</opcion>
+			<es_correcta>false</es_correcta>
+		</respuesta>
+		<respuesta id_pregunta="30">
+			<opcion>El tamaño limitado del espacio de memoria direccionable por
+				contenido.</opcion>
+			<es_correcta>false</es_correcta>
+		</respuesta>
+	</pregunta>
+	<pregunta es_multiple="false" id_pregunta="31">
+		<texto>¿Qué función o configuración de un switch lo hace vulnerable a
+			los ataques de etiquetado doble de VLAN?</texto>
+		<respuesta id_pregunta="31">
+			<opcion>Modo dúplex mixto habilitado para todos los puertos de forma
+				predeterminada.</opcion>
+			<es_correcta>false</es_correcta>
+		</respuesta>
+		<respuesta id_pregunta="31">
+			<opcion>La VLAN nativa del puerto troncal es la misma que la VLAN de
+				un usuario.</opcion>
+			<es_correcta>true</es_correcta>
+		</respuesta>
+		<respuesta id_pregunta="31">
+			<opcion>La función de puerto de enlace troncal automático habilitada
+				para todos los puertos de forma predeterminada.</opcion>
+			<es_correcta>false</es_correcta>
+		</respuesta>
+		<respuesta id_pregunta="31">
+			<opcion>El tamaño limitado del espacio de memoria direccionable por
+				contenido.</opcion>
+			<es_correcta>false</es_correcta>
+		</respuesta>
+	</pregunta>
+	<pregunta es_multiple="false" id_pregunta="32">
+		<texto>¿Qué función o configuración de un switch lo hace vulnerable a
+			los ataques de etiquetado doble de VLAN?</texto>
+		<respuesta id_pregunta="32">
+			<opcion>Modo dúplex mixto habilitado para todos los puertos de forma
+				predeterminada.</opcion>
+			<es_correcta>false</es_correcta>
+		</respuesta>
+		<respuesta id_pregunta="32">
+			<opcion>La VLAN nativa del puerto troncal es la misma que la VLAN de
+				un usuario.</opcion>
+			<es_correcta>true</es_correcta>
+		</respuesta>
+		<respuesta id_pregunta="32">
+			<opcion>La función de puerto de enlace troncal automático habilitada
+				para todos los puertos de forma predeterminada.</opcion>
+			<es_correcta>false</es_correcta>
+		</respuesta>
+		<respuesta id_pregunta="32">
+			<opcion>El tamaño limitado del espacio de memoria direccionable por
+				contenido.</opcion>
+			<es_correcta>false</es_correcta>
+		</respuesta>
+	</pregunta>
+	<pregunta es_multiple="false" id_pregunta="33">
+		<texto>¿Qué función o configuración de un switch lo hace vulnerable a
+			los ataques de etiquetado doble de VLAN?</texto>
+		<respuesta id_pregunta="33">
+			<opcion>Modo dúplex mixto habilitado para todos los puertos de forma
+				predeterminada.</opcion>
+			<es_correcta>false</es_correcta>
+		</respuesta>
+		<respuesta id_pregunta="33">
+			<opcion>La VLAN nativa del puerto troncal es la misma que la VLAN de
+				un usuario.</opcion>
+			<es_correcta>true</es_correcta>
+		</respuesta>
+		<respuesta id_pregunta="33">
+			<opcion>La función de puerto de enlace troncal automático habilitada
+				para todos los puertos de forma predeterminada.</opcion>
+			<es_correcta>false</es_correcta>
+		</respuesta>
+		<respuesta id_pregunta="33">
+			<opcion>El tamaño limitado del espacio de memoria direccionable por
+				contenido.</opcion>
+			<es_correcta>false</es_correcta>
+		</respuesta>
+	</pregunta>
+	<pregunta es_multiple="false" id_pregunta="34">
+		<texto>¿Cuál es la función que proporciona el protocolo CAPWAP en una
+			red inalámbrica corporativa?</texto>
+		<respuesta id_pregunta="34">
+			<opcion>CAPWAP proporciona la encapsulación y el reenvío del tráfico
+				de usuarios inalámbricos entre un punto de acceso y un
+				controlador de LAN inalámbrica.</opcion>
+			<es_correcta>true</es_correcta>
+		</respuesta>
+		<respuesta id_pregunta="34">
+			<opcion>CAPWAP proporciona el cifrado del tráfico de usuarios
+				inalámbricos entre un punto de acceso y un cliente inalámbrico.</opcion>
+			<es_correcta>false</es_correcta>
+		</respuesta>
+		<respuesta id_pregunta="34">
+			<opcion>CAPWAP proporciona conectividad entre un punto de acceso que
+				usa direcciones IPv6 y un cliente inalámbrico que usa
+				direcciones IPv4.</opcion>
+			<es_correcta>false</es_correcta>
+		</respuesta>
+		<respuesta id_pregunta="34">
+			<opcion>CAPWAP crea un túnel en los puertos del Protocolo de control
+				de transmisión (TCP) para permitir que un WLC configure un punto
+				de acceso autónomo.</opcion>
+			<es_correcta>false</es_correcta>
+		</respuesta>
+	</pregunta>
+	<pregunta es_multiple="false" id_pregunta="35">
+		<texto>¿Cuál es la función que proporciona el protocolo CAPWAP en una
+			red inalámbrica corporativa?</texto>
+		<respuesta id_pregunta="35">
+			<opcion>CAPWAP proporciona la encapsulación y el reenvío del tráfico
+				de usuarios inalámbricos entre un punto de acceso y un
+				controlador de LAN inalámbrica.</opcion>
+			<es_correcta>true</es_correcta>
+		</respuesta>
+		<respuesta id_pregunta="35">
+			<opcion>CAPWAP proporciona el cifrado del tráfico de usuarios
+				inalámbricos entre un punto de acceso y un cliente inalámbrico.</opcion>
+			<es_correcta>false</es_correcta>
+		</respuesta>
+		<respuesta id_pregunta="35">
+			<opcion>CAPWAP proporciona conectividad entre un punto de acceso que
+				usa direcciones IPv6 y un cliente inalámbrico que usa
+				direcciones IPv4.</opcion>
+			<es_correcta>false</es_correcta>
+		</respuesta>
+		<respuesta id_pregunta="35">
+			<opcion>CAPWAP crea un túnel en los puertos del Protocolo de control
+				de transmisión (TCP) para permitir que un WLC configure un punto
+				de acceso autónomo.</opcion>
+			<es_correcta>false</es_correcta>
+		</respuesta>
+	</pregunta>
+	<pregunta es_multiple="false" id_pregunta="36">
+		<texto>¿Cuál es la función que proporciona el protocolo CAPWAP en una
+			red inalámbrica corporativa?</texto>
+		<respuesta id_pregunta="36">
+			<opcion>CAPWAP proporciona la encapsulación y el reenvío del tráfico
+				de usuarios inalámbricos entre un punto de acceso y un
+				controlador de LAN inalámbrica.</opcion>
+			<es_correcta>true</es_correcta>
+		</respuesta>
+		<respuesta id_pregunta="36">
+			<opcion>CAPWAP proporciona el cifrado del tráfico de usuarios
+				inalámbricos entre un punto de acceso y un cliente inalámbrico.</opcion>
+			<es_correcta>false</es_correcta>
+		</respuesta>
+		<respuesta id_pregunta="36">
+			<opcion>CAPWAP proporciona conectividad entre un punto de acceso que
+				usa direcciones IPv6 y un cliente inalámbrico que usa
+				direcciones IPv4.</opcion>
+			<es_correcta>false</es_correcta>
+		</respuesta>
+		<respuesta id_pregunta="36">
+			<opcion>CAPWAP crea un túnel en los puertos del Protocolo de control
+				de transmisión (TCP) para permitir que un WLC configure un punto
+				de acceso autónomo.</opcion>
+			<es_correcta>false</es_correcta>
+		</respuesta>
+	</pregunta>
+	<pregunta es_multiple="false" id_pregunta="37">
+		<texto>¿Cuál es la función que proporciona el protocolo CAPWAP en una
+			red inalámbrica corporativa?</texto>
+		<respuesta id_pregunta="37">
+			<opcion>CAPWAP proporciona la encapsulación y el reenvío del tráfico
+				de usuarios inalámbricos entre un punto de acceso y un
+				controlador de LAN inalámbrica.</opcion>
+			<es_correcta>true</es_correcta>
+		</respuesta>
+		<respuesta id_pregunta="37">
+			<opcion>CAPWAP proporciona el cifrado del tráfico de usuarios
+				inalámbricos entre un punto de acceso y un cliente inalámbrico.</opcion>
+			<es_correcta>false</es_correcta>
+		</respuesta>
+		<respuesta id_pregunta="37">
+			<opcion>CAPWAP proporciona conectividad entre un punto de acceso que
+				usa direcciones IPv6 y un cliente inalámbrico que usa
+				direcciones IPv4.</opcion>
+			<es_correcta>false</es_correcta>
+		</respuesta>
+		<respuesta id_pregunta="37">
+			<opcion>CAPWAP crea un túnel en los puertos del Protocolo de control
+				de transmisión (TCP) para permitir que un WLC configure un punto
+				de acceso autónomo.</opcion>
+			<es_correcta>false</es_correcta>
+		</respuesta>
+	</pregunta>
+	<pregunta es_multiple="false" id_pregunta="38">
+		<texto>Consulte la exposición. El puerto Fa0/2 ya se ha configurado
+			correctamente. El teléfono IP y la PC funcionan correctamente. ¿Qué
+			configuración de switch sería la más apropiada para el puerto Fa0/2
+			si el administrador de red tiene los siguientes objetivos? Nadie
+			puede desconectar el teléfono IP o la PC y conectar algún otro
+			dispositivo cableado. Si se conecta un dispositivo diferente, el
+			puerto Fa0/2 se cierra. El switch debe detectar automáticamente la
+			dirección MAC del teléfono IP y la PC y agregar esas direcciones a
+			la configuración en ejecución.</texto>
+		<respuesta id_pregunta="38">
+			<opcion>SWA(config-if)# switchport port-security;SWA(config-if)#
+				switchport port-security maximum 2;SWA(config-if)# switchport
+				port-security mac-address sticky;SWA(config-if)# switchport
+				port-security violation restrict</opcion>
+			<es_correcta>false</es_correcta>
+		</respuesta>
+		<respuesta id_pregunta="38">
+			<opcion>SWA(config-if)# switchport port-security;SWA(config-if)#
+				switchport port-security maximum 2;SWA(config-if)# switchport
+				port-security mac-address sticky</opcion>
+			<es_correcta>false</es_correcta>
+		</respuesta>
+		<respuesta id_pregunta="38">
+			<opcion>SWA(config-if)# switchport port-security;SWA(config-if)#
+				switchport port-security mac-address sticky</opcion>
+			<es_correcta>true</es_correcta>
+		</respuesta>
+		<respuesta id_pregunta="38">
+			<opcion>SWA(config-if)# switchport port-security mac-address
+				sticky;SWA(config-if)# switchport port-security maximum 2</opcion>
+			<es_correcta>false</es_correcta>
+		</respuesta>
+	</pregunta>
+	<pregunta es_multiple="false" id_pregunta="39">
+		<texto>Consulte la exposición. El puerto Fa0/2 ya se ha configurado
+			correctamente. El teléfono IP y la PC funcionan correctamente. ¿Qué
+			configuración de switch sería la más apropiada para el puerto Fa0/2
+			si el administrador de red tiene los siguientes objetivos? Nadie
+			puede desconectar el teléfono IP o la PC y conectar algún otro
+			dispositivo cableado. Si se conecta un dispositivo diferente, el
+			puerto Fa0/2 se cierra. El switch debe detectar automáticamente la
+			dirección MAC del teléfono IP y la PC y agregar esas direcciones a
+			la configuración en ejecución.</texto>
+		<respuesta id_pregunta="39">
+			<opcion>SWA(config-if)# switchport port-security;SWA(config-if)#
+				switchport port-security maximum 2;SWA(config-if)# switchport
+				port-security mac-address sticky;SWA(config-if)# switchport
+				port-security violation restrict</opcion>
+			<es_correcta>false</es_correcta>
+		</respuesta>
+		<respuesta id_pregunta="39">
+			<opcion>SWA(config-if)# switchport port-security;SWA(config-if)#
+				switchport port-security maximum 2;SWA(config-if)# switchport
+				port-security mac-address sticky</opcion>
+			<es_correcta>false</es_correcta>
+		</respuesta>
+		<respuesta id_pregunta="39">
+			<opcion>SWA(config-if)# switchport port-security;SWA(config-if)#
+				switchport port-security mac-address sticky</opcion>
+			<es_correcta>true</es_correcta>
+		</respuesta>
+		<respuesta id_pregunta="39">
+			<opcion>SWA(config-if)# switchport port-security mac-address
+				sticky;SWA(config-if)# switchport port-security maximum 2</opcion>
+			<es_correcta>false</es_correcta>
+		</respuesta>
+	</pregunta>
+	<pregunta es_multiple="false" id_pregunta="40">
+		<texto>Consulte la exposición. El puerto Fa0/2 ya se ha configurado
+			correctamente. El teléfono IP y la PC funcionan correctamente. ¿Qué
+			configuración de switch sería la más apropiada para el puerto Fa0/2
+			si el administrador de red tiene los siguientes objetivos? Nadie
+			puede desconectar el teléfono IP o la PC y conectar algún otro
+			dispositivo cableado. Si se conecta un dispositivo diferente, el
+			puerto Fa0/2 se cierra. El switch debe detectar automáticamente la
+			dirección MAC del teléfono IP y la PC y agregar esas direcciones a
+			la configuración en ejecución.</texto>
+		<respuesta id_pregunta="40">
+			<opcion>SWA(config-if)# switchport port-security;SWA(config-if)#
+				switchport port-security maximum 2;SWA(config-if)# switchport
+				port-security mac-address sticky;SWA(config-if)# switchport
+				port-security violation restrict</opcion>
+			<es_correcta>false</es_correcta>
+		</respuesta>
+		<respuesta id_pregunta="40">
+			<opcion>SWA(config-if)# switchport port-security;SWA(config-if)#
+				switchport port-security maximum 2;SWA(config-if)# switchport
+				port-security mac-address sticky</opcion>
+			<es_correcta>false</es_correcta>
+		</respuesta>
+		<respuesta id_pregunta="40">
+			<opcion>SWA(config-if)# switchport port-security;SWA(config-if)#
+				switchport port-security mac-address sticky</opcion>
+			<es_correcta>true</es_correcta>
+		</respuesta>
+		<respuesta id_pregunta="40">
+			<opcion>SWA(config-if)# switchport port-security mac-address
+				sticky;SWA(config-if)# switchport port-security maximum 2</opcion>
+			<es_correcta>false</es_correcta>
+		</respuesta>
+	</pregunta>
+	<pregunta es_multiple="false" id_pregunta="41">
+		<texto>Consulte la exposición. El puerto Fa0/2 ya se ha configurado
+			correctamente. El teléfono IP y la PC funcionan correctamente. ¿Qué
+			configuración de switch sería la más apropiada para el puerto Fa0/2
+			si el administrador de red tiene los siguientes objetivos? Nadie
+			puede desconectar el teléfono IP o la PC y conectar algún otro
+			dispositivo cableado. Si se conecta un dispositivo diferente, el
+			puerto Fa0/2 se cierra. El switch debe detectar automáticamente la
+			dirección MAC del teléfono IP y la PC y agregar esas direcciones a
+			la configuración en ejecución.</texto>
+		<respuesta id_pregunta="41">
+			<opcion>SWA(config-if)# switchport port-security;SWA(config-if)#
+				switchport port-security maximum 2;SWA(config-if)# switchport
+				port-security mac-address sticky;SWA(config-if)# switchport
+				port-security violation restrict</opcion>
+			<es_correcta>false</es_correcta>
+		</respuesta>
+		<respuesta id_pregunta="41">
+			<opcion>SWA(config-if)# switchport port-security;SWA(config-if)#
+				switchport port-security maximum 2;SWA(config-if)# switchport
+				port-security mac-address sticky</opcion>
+			<es_correcta>false</es_correcta>
+		</respuesta>
+		<respuesta id_pregunta="41">
+			<opcion>SWA(config-if)# switchport port-security;SWA(config-if)#
+				switchport port-security mac-address sticky</opcion>
+			<es_correcta>true</es_correcta>
+		</respuesta>
+		<respuesta id_pregunta="41">
+			<opcion>SWA(config-if)# switchport port-security mac-address
+				sticky;SWA(config-if)# switchport port-security maximum 2</opcion>
+			<es_correcta>false</es_correcta>
+		</respuesta>
+	</pregunta>
+	<pregunta es_multiple="false" id_pregunta="42">
+		<texto>Un administrador de red ingresa los siguientes comandos en el
+			switch SW1. SW1(config)# interface range fa0/5 – 10; SW1(config-if)#
+			ip dhcp snooping limit rate 6. ¿Cuál es el efecto después de
+			ingresar estos comandos?</texto>
+		<respuesta id_pregunta="42">
+			<opcion>Si alguno de los puertos FastEthernet del 5 al 10 recibe más
+				de 6 mensajes DHCP por segundo, el puerto seguirá funcionando y
+				se enviará un mensaje de error al administrador de la red.</opcion>
+			<es_correcta>false</es_correcta>
+		</respuesta>
+		<respuesta id_pregunta="42">
+			<opcion>Los puertos FastEthernet del 5 a 10 pueden recibir hasta 6
+				mensajes DHCP por segundo de cualquier tipo.</opcion>
+			<es_correcta>false</es_correcta>
+		</respuesta>
+		<respuesta id_pregunta="42">
+			<opcion>Los puertos FastEthernet 5 a 10 pueden recibir hasta 6
+				mensajes de descubrimiento DHCP por segundo.</opcion>
+			<es_correcta>true</es_correcta>
+		</respuesta>
+		<respuesta id_pregunta="42">
+			<opcion>Si alguno de los puertos FastEthernet 5 al 10 recibe más de
+				6 mensajes DHCP por segundo, el puerto se cerrará.</opcion>
+			<es_correcta>false</es_correcta>
+		</respuesta>
+	</pregunta>
+	<pregunta es_multiple="false" id_pregunta="43">
+		<texto>Un administrador de red ingresa los siguientes comandos en el
+			switch SW1. SW1(config)# interface range fa0/5 – 10; SW1(config-if)#
+			ip dhcp snooping limit rate 6. ¿Cuál es el efecto después de
+			ingresar estos comandos?</texto>
+		<respuesta id_pregunta="43">
+			<opcion>Si alguno de los puertos FastEthernet del 5 al 10 recibe más
+				de 6 mensajes DHCP por segundo, el puerto seguirá funcionando y
+				se enviará un mensaje de error al administrador de la red.</opcion>
+			<es_correcta>false</es_correcta>
+		</respuesta>
+		<respuesta id_pregunta="43">
+			<opcion>Los puertos FastEthernet del 5 a 10 pueden recibir hasta 6
+				mensajes DHCP por segundo de cualquier tipo.</opcion>
+			<es_correcta>false</es_correcta>
+		</respuesta>
+		<respuesta id_pregunta="43">
+			<opcion>Los puertos FastEthernet 5 a 10 pueden recibir hasta 6
+				mensajes de descubrimiento DHCP por segundo.</opcion>
+			<es_correcta>true</es_correcta>
+		</respuesta>
+		<respuesta id_pregunta="43">
+			<opcion>Si alguno de los puertos FastEthernet 5 al 10 recibe más de
+				6 mensajes DHCP por segundo, el puerto se cerrará.</opcion>
+			<es_correcta>false</es_correcta>
+		</respuesta>
+	</pregunta>
+	<pregunta es_multiple="false" id_pregunta="44">
+		<texto>Un administrador de red ingresa los siguientes comandos en el
+			switch SW1. SW1(config)# interface range fa0/5 – 10; SW1(config-if)#
+			ip dhcp snooping limit rate 6. ¿Cuál es el efecto después de
+			ingresar estos comandos?</texto>
+		<respuesta id_pregunta="44">
+			<opcion>Si alguno de los puertos FastEthernet del 5 al 10 recibe más
+				de 6 mensajes DHCP por segundo, el puerto seguirá funcionando y
+				se enviará un mensaje de error al administrador de la red.</opcion>
+			<es_correcta>false</es_correcta>
+		</respuesta>
+		<respuesta id_pregunta="44">
+			<opcion>Los puertos FastEthernet del 5 a 10 pueden recibir hasta 6
+				mensajes DHCP por segundo de cualquier tipo.</opcion>
+			<es_correcta>false</es_correcta>
+		</respuesta>
+		<respuesta id_pregunta="44">
+			<opcion>Los puertos FastEthernet 5 a 10 pueden recibir hasta 6
+				mensajes de descubrimiento DHCP por segundo.</opcion>
+			<es_correcta>true</es_correcta>
+		</respuesta>
+		<respuesta id_pregunta="44">
+			<opcion>Si alguno de los puertos FastEthernet 5 al 10 recibe más de
+				6 mensajes DHCP por segundo, el puerto se cerrará.</opcion>
+			<es_correcta>false</es_correcta>
+		</respuesta>
+	</pregunta>
+	<pregunta es_multiple="false" id_pregunta="45">
+		<texto>Un administrador de red ingresa los siguientes comandos en el
+			switch SW1. SW1(config)# interface range fa0/5 – 10; SW1(config-if)#
+			ip dhcp snooping limit rate 6. ¿Cuál es el efecto después de
+			ingresar estos comandos?</texto>
+		<respuesta id_pregunta="45">
+			<opcion>Si alguno de los puertos FastEthernet del 5 al 10 recibe más
+				de 6 mensajes DHCP por segundo, el puerto seguirá funcionando y
+				se enviará un mensaje de error al administrador de la red.</opcion>
+			<es_correcta>false</es_correcta>
+		</respuesta>
+		<respuesta id_pregunta="45">
+			<opcion>Los puertos FastEthernet del 5 a 10 pueden recibir hasta 6
+				mensajes DHCP por segundo de cualquier tipo.</opcion>
+			<es_correcta>false</es_correcta>
+		</respuesta>
+		<respuesta id_pregunta="45">
+			<opcion>Los puertos FastEthernet 5 a 10 pueden recibir hasta 6
+				mensajes de descubrimiento DHCP por segundo.</opcion>
+			<es_correcta>true</es_correcta>
+		</respuesta>
+		<respuesta id_pregunta="45">
+			<opcion>Si alguno de los puertos FastEthernet 5 al 10 recibe más de
+				6 mensajes DHCP por segundo, el puerto se cerrará.</opcion>
+			<es_correcta>false</es_correcta>
+		</respuesta>
+	</pregunta>
+	<pregunta es_multiple="false" id_pregunta="46">
+		<texto>Un administrador de red de una universidad está configurando el
+			proceso de autenticación de usuario de WLAN. Los usuarios
+			inalámbricos deben ingresar credenciales de nombre de usuario y
+			contraseña que serán verificadas por un servidor. ¿Qué servidor
+			proporcionaría dicho servicio?</texto>
+		<respuesta id_pregunta="46">
+			<opcion>SNMP</opcion>
+			<es_correcta>false</es_correcta>
+		</respuesta>
+		<respuesta id_pregunta="46">
+			<opcion>AAA</opcion>
+			<es_correcta>false</es_correcta>
+		</respuesta>
+		<respuesta id_pregunta="46">
+			<opcion>RADIUS</opcion>
+			<es_correcta>true</es_correcta>
+		</respuesta>
+		<respuesta id_pregunta="46">
+			<opcion>NAT</opcion>
+			<es_correcta>false</es_correcta>
+		</respuesta>
+	</pregunta>
+	<pregunta es_multiple="false" id_pregunta="47">
+		<texto>Un administrador de red de una universidad está configurando el
+			proceso de autenticación de usuario de WLAN. Los usuarios
+			inalámbricos deben ingresar credenciales de nombre de usuario y
+			contraseña que serán verificadas por un servidor. ¿Qué servidor
+			proporcionaría dicho servicio?</texto>
+		<respuesta id_pregunta="47">
+			<opcion>SNMP</opcion>
+			<es_correcta>false</es_correcta>
+		</respuesta>
+		<respuesta id_pregunta="47">
+			<opcion>AAA</opcion>
+			<es_correcta>false</es_correcta>
+		</respuesta>
+		<respuesta id_pregunta="47">
+			<opcion>RADIUS</opcion>
+			<es_correcta>true</es_correcta>
+		</respuesta>
+		<respuesta id_pregunta="47">
+			<opcion>NAT</opcion>
+			<es_correcta>false</es_correcta>
+		</respuesta>
+	</pregunta>
+	<pregunta es_multiple="false" id_pregunta="48">
+		<texto>Un administrador de red de una universidad está configurando el
+			proceso de autenticación de usuario de WLAN. Los usuarios
+			inalámbricos deben ingresar credenciales de nombre de usuario y
+			contraseña que serán verificadas por un servidor. ¿Qué servidor
+			proporcionaría dicho servicio?</texto>
+		<respuesta id_pregunta="48">
+			<opcion>SNMP</opcion>
+			<es_correcta>false</es_correcta>
+		</respuesta>
+		<respuesta id_pregunta="48">
+			<opcion>AAA</opcion>
+			<es_correcta>false</es_correcta>
+		</respuesta>
+		<respuesta id_pregunta="48">
+			<opcion>RADIUS</opcion>
+			<es_correcta>true</es_correcta>
+		</respuesta>
+		<respuesta id_pregunta="48">
+			<opcion>NAT</opcion>
+			<es_correcta>false</es_correcta>
+		</respuesta>
+	</pregunta>
+	<pregunta es_multiple="false" id_pregunta="49">
+		<texto>Un administrador de red de una universidad está configurando el
+			proceso de autenticación de usuario de WLAN. Los usuarios
+			inalámbricos deben ingresar credenciales de nombre de usuario y
+			contraseña que serán verificadas por un servidor. ¿Qué servidor
+			proporcionaría dicho servicio?</texto>
+		<respuesta id_pregunta="49">
+			<opcion>SNMP</opcion>
+			<es_correcta>false</es_correcta>
+		</respuesta>
+		<respuesta id_pregunta="49">
+			<opcion>AAA</opcion>
+			<es_correcta>false</es_correcta>
+		</respuesta>
+		<respuesta id_pregunta="49">
+			<opcion>RADIUS</opcion>
+			<es_correcta>true</es_correcta>
+		</respuesta>
+		<respuesta id_pregunta="49">
+			<opcion>NAT</opcion>
+			<es_correcta>false</es_correcta>
+		</respuesta>
+	</pregunta>
+	<pregunta es_multiple="true" id_pregunta="50">
+		<texto>¿Qué tipo de red inalámbrica utiliza transmisores de baja
+			potencia para una red de corto alcance, generalmente de 20 a 30 pies
+			(6 a 9 metros)?</texto>
+		<respuesta id_pregunta="50">
+			<opcion>Red inalámbrica de área metropolitana</opcion>
+			<es_correcta>false</es_correcta>
+		</respuesta>
+		<respuesta id_pregunta="50">
+			<opcion>Red de área personal inalámbrica</opcion>
+			<es_correcta>true</es_correcta>
+		</respuesta>
+		<respuesta id_pregunta="50">
+			<opcion>Red inalámbrica local</opcion>
+			<es_correcta>true</es_correcta>
+		</respuesta>
+		<respuesta id_pregunta="50">
+			<opcion>Red de área amplia inalámbrica</opcion>
+			<es_correcta>false</es_correcta>
+		</respuesta>
+	</pregunta>
+	<pregunta es_multiple="true" id_pregunta="51">
+		<texto>¿Qué tipo de red inalámbrica utiliza transmisores de baja
+			potencia para una red de corto alcance, generalmente de 20 a 30 pies
+			(6 a 9 metros)?</texto>
+		<respuesta id_pregunta="51">
+			<opcion>Red inalámbrica de área metropolitana</opcion>
+			<es_correcta>false</es_correcta>
+		</respuesta>
+		<respuesta id_pregunta="51">
+			<opcion>Red de área personal inalámbrica</opcion>
+			<es_correcta>true</es_correcta>
+		</respuesta>
+		<respuesta id_pregunta="51">
+			<opcion>Red inalámbrica local</opcion>
+			<es_correcta>true</es_correcta>
+		</respuesta>
+		<respuesta id_pregunta="51">
+			<opcion>Red de área amplia inalámbrica</opcion>
+			<es_correcta>false</es_correcta>
+		</respuesta>
+	</pregunta>
+	<pregunta es_multiple="true" id_pregunta="52">
+		<texto>¿Qué tipo de red inalámbrica utiliza transmisores de baja
+			potencia para una red de corto alcance, generalmente de 20 a 30 pies
+			(6 a 9 metros)?</texto>
+		<respuesta id_pregunta="52">
+			<opcion>Red inalámbrica de área metropolitana</opcion>
+			<es_correcta>false</es_correcta>
+		</respuesta>
+		<respuesta id_pregunta="52">
+			<opcion>Red de área personal inalámbrica</opcion>
+			<es_correcta>true</es_correcta>
+		</respuesta>
+		<respuesta id_pregunta="52">
+			<opcion>Red inalámbrica local</opcion>
+			<es_correcta>true</es_correcta>
+		</respuesta>
+		<respuesta id_pregunta="52">
+			<opcion>Red de área amplia inalámbrica</opcion>
+			<es_correcta>false</es_correcta>
+		</respuesta>
+	</pregunta>
+	<pregunta es_multiple="true" id_pregunta="53">
+		<texto>¿Qué tipo de red inalámbrica utiliza transmisores de baja
+			potencia para una red de corto alcance, generalmente de 20 a 30 pies
+			(6 a 9 metros)?</texto>
+		<respuesta id_pregunta="53">
+			<opcion>Red inalámbrica de área metropolitana</opcion>
+			<es_correcta>false</es_correcta>
+		</respuesta>
+		<respuesta id_pregunta="53">
+			<opcion>Red de área personal inalámbrica</opcion>
+			<es_correcta>true</es_correcta>
+		</respuesta>
+		<respuesta id_pregunta="53">
+			<opcion>Red inalámbrica local</opcion>
+			<es_correcta>true</es_correcta>
+		</respuesta>
+		<respuesta id_pregunta="53">
+			<opcion>Red de área amplia inalámbrica</opcion>
+			<es_correcta>false</es_correcta>
+		</respuesta>
+	</pregunta>
+	<pregunta es_multiple="false" id_pregunta="54">
+		<texto>Un técnico está configurando el canal en un router inalámbrico en
+			1, 6 u 11. ¿Cuál es el propósito de ajustar el canal?</texto>
+		<respuesta id_pregunta="54">
+			<opcion>Para evitar interferencias de dispositivos inalámbricos
+				cercanos</opcion>
+			<es_correcta>true</es_correcta>
+		</respuesta>
+		<respuesta id_pregunta="54">
+			<opcion>Para proporcionar modos de seguridad más fuertes</opcion>
+			<es_correcta>false</es_correcta>
+		</respuesta>
+		<respuesta id_pregunta="54">
+			<opcion>Para habilitar diferentes estándares 802.11</opcion>
+			<es_correcta>false</es_correcta>
+		</respuesta>
+		<respuesta id_pregunta="54">
+			<opcion>Para deshabilitar la transmisión del SSID</opcion>
+			<es_correcta>false</es_correcta>
+		</respuesta>
+	</pregunta>
+	<pregunta es_multiple="false" id_pregunta="55">
+		<texto>Un técnico está configurando el canal en un router inalámbrico en
+			1, 6 u 11. ¿Cuál es el propósito de ajustar el canal?</texto>
+		<respuesta id_pregunta="55">
+			<opcion>Para evitar interferencias de dispositivos inalámbricos
+				cercanos</opcion>
+			<es_correcta>true</es_correcta>
+		</respuesta>
+		<respuesta id_pregunta="55">
+			<opcion>Para proporcionar modos de seguridad más fuertes</opcion>
+			<es_correcta>false</es_correcta>
+		</respuesta>
+		<respuesta id_pregunta="55">
+			<opcion>Para habilitar diferentes estándares 802.11</opcion>
+			<es_correcta>false</es_correcta>
+		</respuesta>
+		<respuesta id_pregunta="55">
+			<opcion>Para deshabilitar la transmisión del SSID</opcion>
+			<es_correcta>false</es_correcta>
+		</respuesta>
+	</pregunta>
+	<pregunta es_multiple="false" id_pregunta="56">
+		<texto>Un técnico está configurando el canal en un router inalámbrico en
+			1, 6 u 11. ¿Cuál es el propósito de ajustar el canal?</texto>
+		<respuesta id_pregunta="56">
+			<opcion>Para evitar interferencias de dispositivos inalámbricos
+				cercanos</opcion>
+			<es_correcta>true</es_correcta>
+		</respuesta>
+		<respuesta id_pregunta="56">
+			<opcion>Para proporcionar modos de seguridad más fuertes</opcion>
+			<es_correcta>false</es_correcta>
+		</respuesta>
+		<respuesta id_pregunta="56">
+			<opcion>Para habilitar diferentes estándares 802.11</opcion>
+			<es_correcta>false</es_correcta>
+		</respuesta>
+		<respuesta id_pregunta="56">
+			<opcion>Para deshabilitar la transmisión del SSID</opcion>
+			<es_correcta>false</es_correcta>
+		</respuesta>
+	</pregunta>
+	<pregunta es_multiple="false" id_pregunta="57">
+		<texto>Un técnico está configurando el canal en un router inalámbrico en
+			1, 6 u 11. ¿Cuál es el propósito de ajustar el canal?</texto>
+		<respuesta id_pregunta="57">
+			<opcion>Para evitar interferencias de dispositivos inalámbricos
+				cercanos</opcion>
+			<es_correcta>true</es_correcta>
+		</respuesta>
+		<respuesta id_pregunta="57">
+			<opcion>Para proporcionar modos de seguridad más fuertes</opcion>
+			<es_correcta>false</es_correcta>
+		</respuesta>
+		<respuesta id_pregunta="57">
+			<opcion>Para habilitar diferentes estándares 802.11</opcion>
+			<es_correcta>false</es_correcta>
+		</respuesta>
+		<respuesta id_pregunta="57">
+			<opcion>Para deshabilitar la transmisión del SSID</opcion>
+			<es_correcta>false</es_correcta>
+		</respuesta>
+	</pregunta>
+	<pregunta es_multiple="false" id_pregunta="58">
+		<texto>¿Qué tipo de trama de administración puede emitir regularmente un
+			AP?</texto>
+		<respuesta id_pregunta="58">
+			<opcion>autenticación</opcion>
+			<es_correcta>false</es_correcta>
+		</respuesta>
+		<respuesta id_pregunta="58">
+			<opcion>solicitud de sondeo</opcion>
+			<es_correcta>false</es_correcta>
+		</respuesta>
+		<respuesta id_pregunta="58">
+			<opcion>beacon</opcion>
+			<es_correcta>true</es_correcta>
+		</respuesta>
+		<respuesta id_pregunta="58">
+			<opcion>respuesta de sondeo</opcion>
+			<es_correcta>false</es_correcta>
+		</respuesta>
+	</pregunta>
+	<pregunta es_multiple="false" id_pregunta="59">
+		<texto>¿Qué tipo de trama de administración puede emitir regularmente un
+			AP?</texto>
+		<respuesta id_pregunta="59">
+			<opcion>autenticación</opcion>
+			<es_correcta>false</es_correcta>
+		</respuesta>
+		<respuesta id_pregunta="59">
+			<opcion>solicitud de sondeo</opcion>
+			<es_correcta>false</es_correcta>
+		</respuesta>
+		<respuesta id_pregunta="59">
+			<opcion>beacon</opcion>
+			<es_correcta>true</es_correcta>
+		</respuesta>
+		<respuesta id_pregunta="59">
+			<opcion>respuesta de sondeo</opcion>
+			<es_correcta>false</es_correcta>
+		</respuesta>
+	</pregunta>
+	<pregunta es_multiple="false" id_pregunta="60">
+		<texto>¿Qué tipo de trama de administración puede emitir regularmente un
+			AP?</texto>
+		<respuesta id_pregunta="60">
+			<opcion>autenticación</opcion>
+			<es_correcta>false</es_correcta>
+		</respuesta>
+		<respuesta id_pregunta="60">
+			<opcion>solicitud de sondeo</opcion>
+			<es_correcta>false</es_correcta>
+		</respuesta>
+		<respuesta id_pregunta="60">
+			<opcion>beacon</opcion>
+			<es_correcta>true</es_correcta>
+		</respuesta>
+		<respuesta id_pregunta="60">
+			<opcion>respuesta de sondeo</opcion>
+			<es_correcta>false</es_correcta>
+		</respuesta>
+	</pregunta>
+	<pregunta es_multiple="false" id_pregunta="61">
+		<texto>¿Qué tipo de trama de administración puede emitir regularmente un
+			AP?</texto>
+		<respuesta id_pregunta="61">
+			<opcion>autenticación</opcion>
+			<es_correcta>false</es_correcta>
+		</respuesta>
+		<respuesta id_pregunta="61">
+			<opcion>solicitud de sondeo</opcion>
+			<es_correcta>false</es_correcta>
+		</respuesta>
+		<respuesta id_pregunta="61">
+			<opcion>beacon</opcion>
+			<es_correcta>true</es_correcta>
+		</respuesta>
+		<respuesta id_pregunta="61">
+			<opcion>respuesta de sondeo</opcion>
+			<es_correcta>false</es_correcta>
+		</respuesta>
+	</pregunta>
+</documento>

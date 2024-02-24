@@ -6,7 +6,7 @@
 	<parent>
 		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-starter-parent</artifactId>
-		<version>3.2.2</version>
+		<version>3.2.3</version>
 		<relativePath /> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.evaluacion</groupId>
@@ -25,26 +25,20 @@
 			<name>XQJ Maven Repository</name>
 			<url>http://xqj.net/maven</url>
 		</repository>
-		
-			<!-- Repositorios para objectDB -->
+
+		<!-- Repositorios para objectDB -->
 		<repository>
 			<id>objectdb</id>
 			<name>ObjectDB Repository</name>
 			<url>https://m2.objectdb.com</url>
 		</repository>
 	</repositories>
+	
 	<dependencies>
-		
-		<dependency>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-data-mongodb</artifactId>
-		</dependency>
-		
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-web</artifactId>
 		</dependency>
-
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-devtools</artifactId>
@@ -56,6 +50,7 @@
 			<artifactId>spring-boot-starter-test</artifactId>
 			<scope>test</scope>
 		</dependency>
+
 		<!-- Dependencias para existDB -->
 		<dependency>
 			<groupId>net.sf.xmldb-org</groupId>
@@ -78,7 +73,7 @@
 			<artifactId>xqj-api</artifactId>
 			<version>1.0</version>
 		</dependency>
-				<dependency>
+		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-web-services</artifactId>
 		</dependency>
@@ -100,23 +95,24 @@
 			<artifactId>jta</artifactId>
 			<version>1.1</version>
 		</dependency>
-	
-<!-- Otras opciones object
-    <dependency>
-        <groupId>org.springframework.boot</groupId>
-        <artifactId>spring-boot-starter-data-jpa</artifactId>
-    </dependency>-->
-<!-- Dependencia MongoDB -->
-		<dependency>
-    <groupId>org.springframework.boot</groupId>
-    <artifactId>spring-boot-starter-data-mongodb</artifactId>
-</dependency>
 
-<!-- Dependencias Jasper -->
+		<!-- Otras opciones object
+  		<dependency>
+        	<groupId>org.springframework.boot</groupId>
+        	<artifactId>spring-boot-starter-data-jpa</artifactId>
+	    </dependency>-->
+	
+		<!-- Dependencia MongoDB -->
 		<dependency>
-		    <groupId>net.sf.jasperreports</groupId>
-		    <artifactId>jasperreports</artifactId>
-		    <version>6.20.0</version>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-data-mongodb</artifactId>
+		</dependency>
+
+		<!-- Dependencias Jasper -->
+		<dependency>
+			<groupId>net.sf.jasperreports</groupId>
+			<artifactId>jasperreports</artifactId>
+			<version>6.20.0</version>
 		</dependency>
 
 	</dependencies>

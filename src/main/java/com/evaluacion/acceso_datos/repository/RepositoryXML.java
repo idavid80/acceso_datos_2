@@ -17,17 +17,21 @@ import jakarta.xml.bind.Unmarshaller;
 @Repository
 public class RepositoryXML {
 
-	private static String URI = "xmldb:exist://localhost:8080/exist/xmlrpc";
+	private static String URI = "xmldb:exist://localhost:8080/exist/xmlrpc/";
 
 	public XPathQueryService obtenerServicioXPath() throws Exception {
 
 		String driver = "org.exist.xmldb.DatabaseImpl"; // Driver
+
+		@SuppressWarnings("rawtypes")
 		Class cl = Class.forName(driver);// Cargar el driver
+
+		@SuppressWarnings("deprecation")
 		Database database = (Database) cl.newInstance(); // Instancia de la BD
 		database.setProperty("create-database", "true");
 		DatabaseManager.registerDatabase(database); // Registrar la BD
 		// Accedemos a la colección
-		Collection col = DatabaseManager.getCollection("xmldb:exist://localhost:8080/exist/xmlrpc/db/", "admin", "");
+		Collection col = DatabaseManager.getCollection(URI + "db/", "admin", "");
 
 		XPathQueryService service = (XPathQueryService) col.getService("XPathQueryService", "1.0");
 		service.setProperty("pretty", "true");
